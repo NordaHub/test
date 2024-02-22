@@ -178,13 +178,13 @@ body {
 }
 
 .quizlist {
-  max-width: 90vh; /* Adjust as needed */
-  margin: 5vh auto; /* Adjust as needed */
+  max-width: 75vh; /* Adjust as needed */
+  margin: 2vh auto; /* Adjust as needed */
   background-color: #fff;
-  padding: 5vh;
+  padding: 4vh;
   border-radius: 6vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
-  height: 35vh; /* Adjust as needed */
+  height: 30vh; /* Adjust as needed */
   overflow-x: auto; /* Add this line to hide overflowing content */
   overflow-y: hidden;
   opacity: 0; /* Initially set opacity to 0 */
