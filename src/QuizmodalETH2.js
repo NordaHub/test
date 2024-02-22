@@ -77,29 +77,29 @@ const QuizModalETH2 = ({ onClose, onQuizComplete }) => {
 
   const questions = [
     {
-      question: 'What did Frank pay with?',
-      options: ['USDT', 'BitCoin', 'Euro', 'Ethereum'],
-      correctAnswer: 'BitCoin',
+      question: 'Who are the founders of OpenSea?',
+      options: ['Vitalik Buterin', 'Mark Zuckerberg', 'Alex Atallah and Devin Finzer', ': Elon Musk'],
+      correctAnswer: 'Alex Atallah and Devin Finzer',
     },
     {
-      question: 'What is cryptocurency ?',
-      options: ['Stonks', 'Same as regular money', 'A virtual currency', 'IDK option'],
-      correctAnswer: 'A virtual currency',
+      question: 'Which blockchain was OpenSea initially restricted to?',
+      options: ['Ethereum', 'Non', 'Bitcoin', 'Solana'],
+      correctAnswer: 'Ethereum',
     },
     {
-      question: 'When was crypto first introduced ?',
-      options: ['2011', '2013', '2015', '2018'],
-      correctAnswer: '2013',
+      question: 'What is the Wyvern Protocol used for in OpenSea?',
+      options: ['Instant transfer of NFT ownership to the buyer', 'Generating NFTs', 'Analyzing market trends'],
+      correctAnswer: 'Instant transfer of NFT ownership to the buyer',
     },
     {
-      question: 'What does the crypto in Crypto curency stand for? ?',
-      options: ['Money', 'Cryptografy', 'currency', 'Hidden'],
-      correctAnswer: 'Cryptografy',
+      question: 'What investment firm heavily invested in OpenSea?',
+      options: ['Blackrock', 'Goldman Sachs', ' Sequoia Capital', 'Andreessen Horowitz'],
+      correctAnswer: 'Andreessen Horowitz',
     },
     {
-      question: 'How many blockchain can exist ?',
-      options: ['Unlimited', 'Five', 'One'],
-      correctAnswer: 'Unlimited',
+      question: 'What is the primary revenue model for OpenSea?',
+      options: ['Advertising revenue', 'Subscription fees', '2.5% fee on the sale price'],
+      correctAnswer: '2.5% fee on the sale price',
     },
     // Add more questions as needed
   ];
