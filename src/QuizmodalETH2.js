@@ -69,7 +69,7 @@ const QuizModalETH2 = ({ onClose, onQuizComplete }) => {
 
   const videos = [
     {
-      title: 'What is cryptocurrency?',
+      title: 'What is Opensea?',
       src: 'https://www.youtube.com/embed/uBN6B99Mzx4',
     },
     // Add more videos as needed
