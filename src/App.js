@@ -210,30 +210,7 @@ const App = () => {
             Start Quiz
           </button>
           
-        </div>     
-        <div className="Quizmenu">
-        <div className="quizlist">
-          <h2>SolarDao</h2>
-          <div className="quizintro">
-            <div className="text-box">
-              <div className="object-details">
-                <p>
-
-                some Solar stuff
-                
-                </p>
-              </div>
-            </div>
-            <div className="image-container">
-              <div className="image-inner-container">
-                <img className="object-image" src="https://pbs.twimg.com/profile_banners/1630905875647852545/1682679932/1500x500" alt="Object Image" />
-              </div>
-            </div>
-          </div>
-          <button className="clickable-button" onClick={openQuizModalsolar}>
-            Start Quiz
-          </button>
-        </div></div></div>
+        </div></div>
 
         <div className="body-content">
           {/* Render different content based on selectedContent */}
@@ -267,26 +244,6 @@ const App = () => {
           </div>
           <button className="clickable-button" onClick={openQuizModal}>
             Start Quiz
-          </button>
-        </div>
-        <div className="quizlist">
-          <h2>How does CCD work</h2>
-          <div className="quizintro">
-            <div className="text-box">
-              <div className="object-details">
-                <p>
-                  Learn about the mechanisms that ensure stability and value appreciation of CCD, and understand how the token integrates with the broader Concordium ecosystem.
-                </p>
-              </div>
-            </div>
-            <div className="image-container">
-              <div className="image-inner-container">
-                <img className="object-image" src="https://cdn.discordapp.com/attachments/972039284410449920/1202257028417065020/bc41c6caba1ab416c7f42a6f8b2b725c.png?ex=65cccc1c&is=65ba571c&hm=5640fb546a6e6a5d5070428408bbc053f739e170a932fe78a044231260f83257&" alt="Object Image" />
-              </div>
-            </div>
-          </div>
-          <button className="clickable-button" onClick={openQuizModal2}>
-          Start Quiz
           </button>
         </div>
       </div>
