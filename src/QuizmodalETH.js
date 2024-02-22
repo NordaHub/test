@@ -78,28 +78,28 @@ const QuizModalETH = ({ onClose, onQuizComplete }) => {
   const questions = [
     {
       question: 'What is Ethereum primarily known for?',
-      options: ['Enabling online payments.', 'Providing tools for building decentralized applications.', ' Facilitating peer-to-peer transactions.'],
-      correctAnswer: 'Providing tools for building decentralized applications.',
+      options: ['Online payments', 'Running DApps.', 'Social networking.'],
+      correctAnswer: 'Running DApps.',
     },
     {
-      question: 'How does Ether differ from Bitcoin?',
-      options: ['Ether is only used for online purchases', 'Ether fuels the Ethereum network and is used for code execution, while Bitcoin is primarily a peer-to-peer electronic cash system', 'Ether is more secure.'],
-      correctAnswer: 'Ether fuels the Ethereum network and is used for code execution, while Bitcoin is primarily a peer-to-peer electronic cash system.',
+      question: 'How does Ethereum differ from Bitcoin?',
+      options: ['Same purpose', 'Focuses on DApps', 'Only for online shopping'],
+      correctAnswer: 'Focuses on DApps',
     },
     {
-      question: 'When was crypto first introduced ?',
-      options: ['2011', '2013', '2015', '2018'],
-      correctAnswer: '2013',
+      question: 'What is Ether ?',
+      options: ['Gas', 'Ethereums cryptocurrency', 'Programming language'],
+      correctAnswer: 'Ethereums cryptocurrency',
     },
     {
-      question: 'What does the crypto in Crypto curency stand for? ?',
-      options: ['Money', 'Cryptografy', 'currency', 'Hidden'],
-      correctAnswer: 'Cryptografy',
+      question: 'What are smart contracts on Ethereum?',
+      options: ['Legal documents on blockchain', 'Programs for asset exchange', 'Type of cryptocurrency'],
+      correctAnswer: 'Programs for asset exchange',
     },
     {
-      question: 'How many blockchain can exist ?',
-      options: ['Unlimited', 'Five', 'One'],
-      correctAnswer: 'Unlimited',
+      question: 'How does Ethereum serve as a computing platform?',
+      options: ['Hosting social media', 'Enabling app creation on one platform', 'Enabling app creation on one platform'],
+      correctAnswer: 'Enabling app creation on one platform',
     },
     // Add more questions as needed
   ];
@@ -171,5 +171,4 @@ const QuizModalETH = ({ onClose, onQuizComplete }) => {
     </div>
   );
 };
-
 export default QuizModalETH;
