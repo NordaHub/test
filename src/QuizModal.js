@@ -77,29 +77,29 @@ const QuizModal = ({ onClose, onQuizComplete }) => {
 
   const questions = [
     {
-      question: 'What did Frank pay with?',
-      options: ['USDT', 'BitCoin', 'Euro', 'Ethereum'],
-      correctAnswer: 'BitCoin',
+      question: 'What is the primary focus of Concordiums blockchain platform?',
+      options: ['Social media integration', 'Gaming development', 'Business applications', 'Money'],
+      correctAnswer: 'Business applications',
     },
     {
-      question: 'What is cryptocurency ?',
-      options: ['Stonks', 'Same as regular money', 'A virtual currency', 'IDK option'],
-      correctAnswer: 'A virtual currency',
+      question: 'What is the native token of Concordium?',
+      options: [' BTC', 'CCD', 'ETH', 'USDT'],
+      correctAnswer: 'CCD',
     },
     {
-      question: 'When was crypto first introduced ?',
-      options: ['2011', '2013', '2015', '2018'],
-      correctAnswer: '2013',
+      question: 'What role does CCD play within the Concordium ecosystem?',
+      options: ['Supporting Identification development', 'Supporting gaming development', 'Providing social media access', 'Facilitating value transfer and transaction fees'],
+      correctAnswer: 'Facilitating value transfer and transaction fees',
     },
     {
-      question: 'What does the crypto in Crypto curency stand for? ?',
-      options: ['Money', 'Cryptografy', 'currency', 'Hidden'],
-      correctAnswer: 'Cryptografy',
+      question: ' How does Concordium aim to address the challenges faced by legacy blockchains in supporting enterprise demands?',
+      options: ['By prioritizing gaming development over business application', ' By offering a compliant platform with privacy assurance', ' By focusing solely on social media integratio'],
+      correctAnswer: ' By offering a compliant platform with privacy assurance',
     },
     {
-      question: 'How many blockchain can exist ?',
-      options: ['Unlimited', 'Five', 'One'],
-      correctAnswer: 'Unlimited',
+      question: 'What should investors consider before deciding to invest in Concordium?',
+      options: ['Both technical and fundamental factors', 'Only on-chain activity', 'Only technical factors'],
+      correctAnswer: 'Both technical and fundamental factors',
     },
     // Add more questions as needed
   ];
@@ -172,4 +172,5 @@ const QuizModal = ({ onClose, onQuizComplete }) => {
   );
 };
 
+export default QuizModal;
 export default QuizModal;
