@@ -1,43 +1,34 @@
 import React from 'react';
+import './FAQModal.css'; // Import CSS for styling
 
-const NewsModal = ({ onClose }) => {
+const FAQModal = ({ onClose }) => {
   return (
-    <div className="news-modal-overlay"> 
-      <div className="news-modal">          
-
-        <div className="header-container">
-          {/* News Section 1 */}
-          <div className="news-section">
-            <h2>BETA Release Of NordaHub Quiz App</h2>         <button className="close-button" onClick={onClose}>
+    <div className="faq-modal-overlay">
+      <div className="faq-modal">
+        <div className="faq-header">
+          <h2>Frequently Asked Questions</h2>
+          <button className="close-button" onClick={onClose}>
             X
           </button>
-            <img
-    src="https://media.discordapp.net/attachments/972039284410449920/1210024450959872061/asdasd.png?ex=65e90e16&is=65d69916&hm=3ba64dab59f4aa5b6d6f5165aab7e42b5247884320791cd46fc353773d932bcd&=&format=webp&quality=lossless&width=598&height=141"
-    alt="News Image 1"
-    className="news-image"
-    style={{ width: '75vh', height: '15vh' }} // Adjust the width and height here
-  />
-  <p>
-            Introducing NordaHub Beta: Your Gateway to Crypto Learning and Earning!<p> Embark on a revolutionary journey into the world of cryptocurrency with NordaHub Beta,</p>
-            <p>our cutting-edge Learn-to-Earn decentralized application (DApp). Designed to empower users with both</p> knowledge and tangible rewards, NordaHub Beta is your passport to unlocking the full potential of blockchain technology.</p>
-         </div>
-          {/* Section Divider */}
-          <hr className="section-divider" />
-          {/* News Section 2 */}
-          <div className="news-section">
-            <h2></h2>
-            <img
-              src=""
-              alt=""
-              className="news-image"
-            />
-            </div>
-          {/* ... other news sections ... */}
-
+        </div>
+        <div className="faq-content">
+          <div className="faq-section">
+            <h3>What is NordaHub L2E?</h3>
+            <p>NordaHub is a decentralized Quizplatform Where Learn to Earn </p>
+          </div>
+          <div className="faq-section">
+            <h3>How do I get started?</h3>
+            <p>To get started, you need to have a metamask wallet to be edgible for airdrop</p>
+          </div>
+          <div className="faq-section">
+            <h3>Can I withdraw my earnings?</h3>
+            <p>You Earning will be automaticly airdropped to you walletAddress</p>
+          </div>
+          {/* Add more FAQ sections as needed */}
         </div>
       </div>
     </div>
   );
 };
 
-export default NewsModal;
+export default FAQModal;
