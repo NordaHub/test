@@ -2,10 +2,11 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./images/Backkghround.jpg'); /* Replace with the correct path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url('./images/dark_bg.jpg');
+    background-size: 100%;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-color: #55555552;
   font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
   scrollbar-width: thin; /* Firefox */
   scrollbar-color: transparent transparent; /* Firefox */
@@ -15,38 +16,41 @@ body {
 }
 
 
-
 .app {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.header-buttons {
+.header-container {
   display: flex;
-  gap: 1rem; /* Adjust the gap as needed */
+  flex-direction: column;
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   color: white;
-  padding: 10px 20px;
-
+  padding: 0.5%;
+  position: fixed;
+  top: 0;
+  width: 99%;
   /* Background image */
   background-image: url('./images/top_bar.png');
   background-size: cover; /* Adjust as needed */
   background-repeat: no-repeat; /* Prevent image from repeating */
+  z-index: 10000;
+  
 }
+
 .logo-container {
   display: flex;
   align-items: center;
 }
 
 .logo {
-  width: 30px;
-  height: 30px;
+  width: 10%;
+  height: 30%;
   margin-right: 10px;
 }
 
@@ -55,7 +59,7 @@ body {
 }
 
 .menu-tab {
-  font-size: 24px;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -90,16 +94,15 @@ body {
 }
 
 .menu-header-text {
-  font-size: 18px; /* Adjust the font size */
+  font-size: 20px; /* Adjust the font size */
 }
 .header-buttons a:last-child {
   margin-right: 0; /* Remove margin for the last button */
 }
 .menu {
-  width: 20vh;
+  margin-top: 3%;
+  width: 7%;
   height: 100%;
-  
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,7 +110,8 @@ body {
   top: 0;
   right: -200vh;
   transition: right 1.5s ease;
-  max-height: 95%;
+  max-height: 89%;
+  z-index: 1000;
 
   /* Background image */
   background-image: url('./images/menu_bar.png');
@@ -123,28 +127,67 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 2vh;
-  margin-top: 5vh;
+  padding: 2%;
+  margin-top: 5%;
   
 }
 
+.MM {
+  position: relative;
+  width: 100%; /* adjust this according to your container's width */
+  height: 100%; /* adjust this according to your container's height */
+}
+
+.MM img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 .menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 5vh;
-  margin: 1vh;
-  font-size: 1.5vh;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5%;
+  margin: 5%;
+  height: 5%;
+  width: 50%;
+}
+
+.menu-button img {
+  width: 100px; /* Adjust the width of the images as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.menu-button:focus {
+  outline: none; /* Remove focus outline for accessibility */
 }
 
 .menu-button:hover {
   transform: scale(1.1);
+  border: #fff;
+  border-radius: 1vh;
+}
+.logomiddle {
+  display: fixed;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  margin-right: 20%
+
 }
 
+.logotop {
+  /* Optionally, you can add styles for .logotop if needed */
+}
+
+/* Additional CSS for image if necessary */
+.logotop img {
+  max-width: 35%; /* Ensure image doesn't exceed container width */
+  height: auto; /* Maintain aspect ratio */
+}
 .menu-button i {
-  max-height: 3vh;
+  max-height: 5%;
   margin-top: 3vh;
-  margin-right: 20px; /* Adjust the spacing between icon and text */
+  margin-right: 2%; /* Adjust the spacing between icon and text */
 }
 
 .close-menu-tab {
@@ -158,7 +201,6 @@ body {
   padding: 10px;
   background-color: #555;
 }
-
 
 .card {
   padding: 20px;
@@ -178,19 +220,24 @@ body {
 }
 
 .quizlist {
-  max-width: 75vh; /* Adjust as needed */
-  margin: 2vh auto; /* Adjust as needed */
-  background-color: #fff;
-  padding: 4vh;
-  border-radius: 6vh;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
-  height: 30vh; /* Adjust as needed */
-  overflow-x: auto; /* Add this line to hide overflowing content */
-  overflow-y: hidden;
-  opacity: 0; /* Initially set opacity to 0 */
-  animation: fadeInAnimation 1.5s ease forwards; /* Apply animation */
+    width: 75%; /* Adjust as needed */
+    height: 15%; /* Adjust as needed */
+    max-width: 75vh; /* Adjust as needed */
+    margin: 1% auto; /* Adjust as needed */
+    background-image: url('./images/menu_bar.png');
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    padding: 2%; /* Adjust as needed */
+    border-radius: 6%; /* Adjust as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
+    overflow-x: auto; /* Add this line to hide overflowing content */
+    overflow-y: hidden;
+    opacity: 0; /* Initially set opacity to 0 */
+    animation: fadeInAnimation 1.5s ease forwards; /* Apply animation */
 }
-
+.quizlist h2 {
+  color: white;
+}
 @keyframes fadeInAnimation {
   from {
     opacity: 0; /* Start opacity */
@@ -205,13 +252,15 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   align-items: flex-start; /* Align items to the top */
+  
 }
 
 .text-box {
   flex: 1;
   border-radius: 8px;
   padding: 15px;
-  background-color: #ffffff;
+  background-color: transparent;
+  color: white
 }
 
 .object-details p {
@@ -253,10 +302,15 @@ body {
 }
 
 .left-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 1rem; /* Adjust the margin as needed */
+  margin-top: 1rem; /* Adjust the margin as needed */
+  background-color: #f0f0f0; /* Match the background color of the wallet-info-section */
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000; /* Ensure it appears above other content */
 }
 
 .wallet-info-section {
@@ -264,9 +318,12 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
-  background-color: #f0f0f0;
+  max-width: 20%;
+  background-color: rgba(77, 75, 75, 0.493);
   border-radius: 5px;
-  margin-left: 10px;
+  margin-top: 4%; /* Adjust the margin as needed */
+  z-index: 1000; /* Ensure it appears above other content */
+  
 }
 
 .connected-wallet,
@@ -290,17 +347,16 @@ body {
   background-color: #2980b9;
 }
 .footer {
-  /* Background image */
   background-image: url('./images/footer.png');
-  background-size: cover; /* Adjust as needed */
-  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-size: 100%;
+  background-repeat: no-repeat;
   color: white;
   text-align: center;
-  padding: 0.1%;
-  position: sticky;
-  bottom: 0;
-  max-height: 5vh;
-  min-height: 2%;
+  position: fixed; /* Change from sticky to fixed */
+  bottom: 0; /* Adjusted to 0 */
+  width: 100%; /* Added width */
+  max-height: 7%;
+  z-index: 10000;
 }
 
 .footer-content {
@@ -311,21 +367,17 @@ body {
 
 .footer-logo img {
   width: 50px; /* Adjust the width of your logo */
+  margin-right: 0%;
 }
 
 .footer-text {
   flex-grow: 1;
-  margin: 0 20px;
+  margin-left: 15%;
 }
 
 .footer-copyright {
   font-size: 14px;
-}
-
-.header-buttons {
-  display: flex;
-  align-items: center;
-  margin-left: 20px; /* Adjust the left margin as needed */
+  margin-right: 5%;
 }
 
 .clickable-button2 {
@@ -342,76 +394,7 @@ body {
 .clickable-button2:hover {
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
 }
-@media only screen and (max-width: 600px) {
-  .app {
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
 
-  .header {
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
-
-  .logo {
-    width: 20px; /* Adjust the logo size for smaller screens */
-    height: 20px;
-  }
-
-  .logo-text {
-    font-size: 14px; /* Adjust the font size for smaller screens */
-  }
-
-  .menu-tab {
-    font-size: 20px; /* Adjust the menu tab size for smaller screens */
-  }
-
-  .main {
-    flex-direction: column; /* Stack main content in a column for smaller screens */
-  }
-
-  .menu {
-    width: 100%;
-    max-height: none;
-    right: 0;
-  }
-
-  .menu-content {
-    margin-top: 0;
-  }
-
-  .banner {
-    margin-top: 0;
-  }
-
-  .quizlist {
-    max-width: 100%;
-    margin: 10px auto;
-  }
-
-  .footer {
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
-
-  .footer-content {
-    flex-direction: column; /* Stack footer content in a column for smaller screens */
-    text-align: center;
-  }
-
-  .footer-logo img {
-    width: 30px; /* Adjust the logo size for smaller screens */
-  }
-
-  .footer-text {
-    margin: 10px 0;
-  }
-
-  .header-buttons {
-    margin-left: 0;
-  }
-
-  .clickable-button2 {
-    margin: 10px 0;
-  }
-}
 
 body::-webkit-scrollbar {
   width: 0.1em;
@@ -485,5 +468,31 @@ iframe {
   color: #333; /* Text color */
   margin: 0; /* Remove default margin */
   padding-bottom: 10px; /* Space below the header */
-  border-bottom: 2px solid #ccc; /* Bottom border */
 }
+
+@media only screen and (max-width: 600px) {
+  .menu-tab {
+    display: block; /* Display the menu tab for mobile devices */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .wallet-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-top: 10%; /* Adjust the margin as needed */
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+}
+
