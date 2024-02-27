@@ -30,7 +30,7 @@ const App = () => {
 
   const [quizModalsolarOpen, setQuizModalsolarOpen] = useState(false);
 
-  const [newsModalOpen, setNewsModalOpen] = useState(false);
+  const [NewsModalOpen, setNewsModalOpen] = useState(false);
   const [FAQModalOpen, setFAQModalOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -126,7 +126,9 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+   
+   <div className="app">
+      <body> <main> 
       <header className="header">
         <div className="logo-container">
           <img src={logo} alt="Logo" className="logo" />
@@ -135,12 +137,15 @@ const App = () => {
           <button className="clickable-button2" onClick={openFAQModal}>
             FAQ</button>
         </div>
+        <div className='logomiddle'>
+          <div className='logotop'><img src="https://media.discordapp.net/attachments/972039284410449920/1210024450959872061/asdasd.png?ex=65e90e16&is=65d69916&hm=3ba64dab59f4aa5b6d6f5165aab7e42b5247884320791cd46fc353773d932bcd&=&format=webp&quality=lossless&width=598&height=141" alt="middelogo" ></img>
+          </div>
+        </div>
         <div className="menu-tab" onClick={toggleMenu}>
           ☰
         </div>
-        
+
       </header>
-      <main>
         <div className="wallet-info-section">
           {isMetamaskConnected && (
             <div>
@@ -155,26 +160,30 @@ const App = () => {
               </div>
             </div>
           )}
- <div className="wallet-connect-button" onClick={isMetamaskConnected ? disconnectMetamask : connectMetamask}>
-  {isMetamaskConnected ? 'Disconnect Wallet' : 'Connect Wallet'}
-</div>
+        <div className="wallet-connect-button" onClick={isMetamaskConnected ? disconnectMetamask : connectMetamask}>
+          {isMetamaskConnected ? 'Disconnect Wallet' : 'Connect Wallet'}
+        </div>
         </div>
              <div className={`menu ${menuOpen ? 'open' : ''}`}>
           <div className="menu-header">
             <span className="menu-header-text">Blockchains</span>
           </div>
           <div className="menu-content">
-            {/* Buttons to select content */}
-            <button className="menu-button" onClick={() => handleCategorySelect("Category 1")}>
-              Concordium
-            </button>
-            <button className="menu-button" onClick={() => handleCategorySelect("Category 2")}>
-              Ethereum
-            </button>
-            {/* Add more buttons for additional categories */}
-          </div>
-          <div className="close-menu-tab" onClick={toggleMenu}>
-            ☰
+  {/* Buttons with images */}
+        <button className="menu-button" onClick={() => handleCategorySelect("Category 2")}>
+          <img src="https://cdn.discordapp.com/attachments/1144987172487835678/1211417097888989194/erc20_menu.png?ex=65ee1f17&is=65dbaa17&hm=cff9ccfab5bc046142e9d49b144ad9091fd459226c9730b093d91b1dd044b8cd&" alt="Ethereum" />
+        </button>
+        <button className="menu-button" onClick={() => handleCategorySelect("Category 3")}>
+          <img src="https://cdn.discordapp.com/attachments/1144987172487835678/1211417432816615485/bsc_menu.png?ex=65ee1f67&is=65dbaa67&hm=73d43f6494c1692d3d292ac3be46bdf0ddd870b9f3cbce9ec6c69454648faa9a&" alt="BSC" />
+        </button>
+        <button className="menu-button" onClick={() => handleCategorySelect("Category 4")}>
+          <img src="https://cdn.discordapp.com/attachments/1144987172487835678/1211417387933503488/polygon_menu.png?ex=65ee1f5c&is=65dbaa5c&hm=9fb33895749378cf635b03d1f240ec16d428853f478149d5f7e25dec72231eba&" alt="Polygon" />
+        </button>
+        <button className="menu-button" onClick={() => handleCategorySelect("Category 1")}>
+          <img src="https://cdn.discordapp.com/attachments/1144987172487835678/1211417401489625148/concordium_menu.png?ex=65ee1f5f&is=65dbaa5f&hm=10575811523b1d59bd33c6ebea73e0a955f9b650d9dcfac835719f5f98817dc2&" alt="Concordium" />
+        </button>
+        </div>
+          <div className="close-menu-tab" onClick={toggleMenu}> 
           </div>
           {menuOpen && (
             <div className="banner">
@@ -208,9 +217,10 @@ const App = () => {
           </div>
           <button className="clickable-button" onClick={openQuizModal0}>
             Start Quiz
-          </button>
-          
-        </div></div>
+          </button><div class="MM">
+          <img src="https://cdn.discordapp.com/attachments/810276022980444200/1211420551252545637/metamask.png?ex=65ee224e&is=65dbad4e&hm=fa9c5ae67d2d19b17736fff9f5646a0dbb7c31adb3350f03d78ea28d28877ece&" alt="Metamask Icon" />
+          </div>
+          </div></div>
 
         <div className="body-content">
           {/* Render different content based on selectedContent */}
@@ -313,6 +323,16 @@ const App = () => {
           )}
           {/* Add more conditional rendering for additional categories */}
         </div>
+      <div>
+          {selectedContent === "Category 4" && (
+            <div>
+              {/* Content for Category 3 */}
+              <h1>Category 4 Content</h1>
+              <p>This is the content for Category 3.</p>
+            </div>
+          )}
+          {/* Add more conditional rendering for additional categories */}
+        </div>
       </main>
       <Spacer height="500px" />
       <footer className="footer">
@@ -328,8 +348,8 @@ const App = () => {
           <p>&copy; 2024 NordaHub AB. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-      {newsModalOpen && <NewsModal onClose={closeNewsModal} />}
+    </footer></body>
+      {NewsModalOpen && <NewsModal onClose={closeNewsModal} />}
       {FAQModalOpen && <FAQModal onClose={closeFAQModal} />}
       {quizModal0Open && <QuizModal0 onClose={closeQuizModal0} />}
       {quizModalOpen && <QuizModal onClose={closeQuizModal} />}
