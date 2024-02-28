@@ -1,5 +1,5 @@
 import React from 'react';
-import './FAQModal.css'; // Import CSS for styling
+import './App.css'; // Import CSS for styling
 
 const FAQModal = ({ onClose }) => {
   return (
