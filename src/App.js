@@ -126,9 +126,9 @@ const App = () => {
   };
 
   return (
-   
-   <div className="app">
-      <body> <main> 
+   <div className="app"> 
+  
+      <body> <div class="scrollbarbs"> <main> 
       <header className="header">
         <div className="logo-container">
           <img src={logo} alt="Logo" className="logo" />
@@ -191,6 +191,7 @@ const App = () => {
             </div>
           )}
         </div>
+        <div classname="cyka">
         <div className="dividerbox">
            <div className="dividercontent">
               <h2 className="section-header">Inhouse Quizzes</h2>
@@ -332,7 +333,7 @@ const App = () => {
             </div>
           )}
           {/* Add more conditional rendering for additional categories */}
-        </div>
+        </div></div>
       </main>
       <Spacer height="500px" />
       <footer className="footer">
@@ -348,7 +349,9 @@ const App = () => {
           <p>&copy; 2024 NordaHub AB. All rights reserved.</p>
         </div>
       </div>
-    </footer></body>
+    </footer>
+    </div>
+    </body>
       {NewsModalOpen && <NewsModal onClose={closeNewsModal} />}
       {FAQModalOpen && <FAQModal onClose={closeFAQModal} />}
       {quizModal0Open && <QuizModal0 onClose={closeQuizModal0} />}
