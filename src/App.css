@@ -1,23 +1,34 @@
 /* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Flow+Block&display=swap');
+
+:root::-webkit-scrollbar{
+  display: none;
+}
+
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 body {
+  height: 100vh;
   margin: 0;
   padding: 0;
-    background-image: url('./images/dark_bg.jpg');
-    background-size: 100%;
-    background-position: fixed;
-    background-repeat: no-repeat;
+    background-image: url('https://cdn.discordapp.com/attachments/267330143536545802/1212034426410770482/BackdropBlackLittleSparkBlack.png?ex=65f05e05&is=65dde905&hm=467f798164c56532342ec4c098dbceec3360c2e5c5ecb659905cd2893a878e46&');
+    background-size: 10%;
+    background-position: flex;
+    background-repeat: repeat;
     background-color: #55555552;
   font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
-  scrollbar-width: thin; /* Firefox */
+
   scrollbar-color: transparent transparent; /* Firefox */
+  
 
   /* For Webkit browsers (Chrome, Safari) */
-  overflow: overlay;
 }
 
 
 .app {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -39,7 +50,7 @@ body {
   background-image: url('./images/top_bar.png');
   background-size: cover; /* Adjust as needed */
   background-repeat: no-repeat; /* Prevent image from repeating */
-  z-index: 10000;
+  z-index: 1000;
   
 }
 
@@ -51,7 +62,9 @@ body {
 .logo {
   width: 10%;
   height: 30%;
-  margin-right: 10px;
+  position: center;
+
+
 }
 
 .logo-text {
@@ -95,13 +108,14 @@ body {
 
 .menu-header-text {
   font-size: 20px; /* Adjust the font size */
+  margin-top: 50%;
 }
 .header-buttons a:last-child {
   margin-right: 0; /* Remove margin for the last button */
 }
 .menu {
-  margin-top: 3%;
-  width: 7%;
+  margin-top: 0%;
+  width: 10%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -110,8 +124,8 @@ body {
   top: 0;
   right: -200vh;
   transition: right 1.5s ease;
-  max-height: 89%;
-  z-index: 1000;
+  max-height: 100%;
+  z-index: 99;
 
   /* Background image */
   background-image: url('./images/menu_bar.png');
@@ -138,7 +152,7 @@ body {
   height: 100%; /* adjust this according to your container's height */
 }
 
-.MM img {
+.MM img { 
   position: absolute;
   bottom: 0;
   right: 0;
@@ -154,7 +168,7 @@ body {
 }
 
 .menu-button img {
-  width: 100px; /* Adjust the width of the images as needed */
+  width: 250%; /* Adjust the width of the images as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -175,9 +189,6 @@ body {
 
 }
 
-.logotop {
-  /* Optionally, you can add styles for .logotop if needed */
-}
 
 /* Additional CSS for image if necessary */
 .logotop img {
@@ -198,37 +209,21 @@ body {
 
 .banner {
   margin-top: auto;
-  padding: 10px;
   background-color: #555;
-}
-
-.card {
-  padding: 20px;
-  margin: 10px;
-  border: 1px solid #ddd;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  display: inline-block;
-  font-size: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-  transform: scale(1.1);
+  width: 100%;
+  height: 5%;
+  margin-bottom:  26%;
 }
 
 .quizlist {
-    width: 75%; /* Adjust as needed */
+    width: 45%; /* Adjust as needed */
     height: 15%; /* Adjust as needed */
-    max-width: 75vh; /* Adjust as needed */
-    margin: 1% auto; /* Adjust as needed */
+    margin: 2% auto; /* Adjust as needed */
     background-image: url('./images/menu_bar.png');
     background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat; /* Prevent image from repeating */
     padding: 2%; /* Adjust as needed */
-    border-radius: 6%; /* Adjust as needed */
+    border-radius: 3em; /* Adjust as needed */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
     overflow-x: auto; /* Add this line to hide overflowing content */
     overflow-y: hidden;
@@ -257,8 +252,9 @@ body {
 
 .text-box {
   flex: 1;
-  border-radius: 8px;
-  padding: 15px;
+  border-radius: 5%;
+  padding: 0px;
+  margin-bottom: 1%;
   background-color: transparent;
   color: white
 }
@@ -283,6 +279,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  border-radius: 1em; /* Adjust as needed */
 }
 
 .clickable-button {
@@ -301,25 +298,13 @@ body {
   background-color: #0056b3;
 }
 
-.left-section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 1rem; /* Adjust the margin as needed */
-  background-color: #f0f0f0; /* Match the background color of the wallet-info-section */
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 1000; /* Ensure it appears above other content */
-}
-
 .wallet-info-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
   max-width: 20%;
-  background-color: rgba(77, 75, 75, 0.493);
+  background-color: transparent(77, 75, 75, 0.493);
   border-radius: 5px;
   margin-top: 4%; /* Adjust the margin as needed */
   z-index: 1000; /* Ensure it appears above other content */
@@ -334,12 +319,12 @@ body {
 
 .wallet-connect-button {
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 1em;
   background-color: #3498db;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 1em;
+  font-size: 1em;
   transition: background-color 0.3s;
 }
 
@@ -355,8 +340,8 @@ body {
   position: fixed; /* Change from sticky to fixed */
   bottom: 0; /* Adjusted to 0 */
   width: 100%; /* Added width */
-  max-height: 7%;
-  z-index: 10000;
+  height: 3em;
+  z-index: 100000;
 }
 
 .footer-content {
@@ -366,7 +351,7 @@ body {
 }
 
 .footer-logo img {
-  width: 50px; /* Adjust the width of your logo */
+  width: 3em; /* Adjust the width of your logo */
   margin-right: 0%;
 }
 
@@ -376,7 +361,7 @@ body {
 }
 
 .footer-copyright {
-  font-size: 14px;
+  font-size: 1em;
   margin-right: 5%;
 }
 
@@ -405,7 +390,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .footer-text img {
-  width: 13px; /* Adjust the width as needed */
+  width: 1em; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -465,7 +450,7 @@ iframe {
 
 .section-header {
   font-size: 24px; /* Adjust font size */
-  color: #333; /* Text color */
+  color: #ffffff; /* Text color */
   margin: 0; /* Remove default margin */
   padding-bottom: 10px; /* Space below the header */
 }
@@ -496,3 +481,79 @@ iframe {
   }
 }
 
+.faq-modal-overlay {
+  position: fixed;
+  top: 5vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); /* Apply blur effect to the modal overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.faq-modal {
+  background: white;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
+  z-index: 100000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px; /* Set your desired max width */
+  height: 75vh; /* Set your desired height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.faq-modal-content {
+  max-width: 500px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the content horizontally */
+  text-align: center; /* Center the text */
+}
+
+.faq-modal-content button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.faq-modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.faq-section {
+  margin-bottom: 20px;
+}
+
+.news-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.cyka {
+  /* Set desired height for the container */
+  height: calc(100vh - 120px); /* Adjust as needed */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
