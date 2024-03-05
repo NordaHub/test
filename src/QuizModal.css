@@ -1,0 +1,269 @@
+/* QuizModal.css */
+::-webkit-scrollbar {
+  display: none;
+}
+.quiz-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px); /* Add a blur effect to the background */
+  display: flex;
+  flex-direction: column; /* Display children in a column layout */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  z-index: 1000; /* Ensure it's above other content */
+  border-color: rgb(237, 237, 237);
+  border-radius: 2vh;
+  color: whitesmoke;
+}
+
+.quiz-modal {
+  background-image: url('./images/footer.png');
+  background-size: cover; /* Changed to cover */
+  background-repeat: no-repeat;
+  padding: 5em;
+  border-radius: 1em;
+  box-shadow: 0 0 20px 5px rgba(83, 83, 83, 0.861); /* Add box-shadow for glowing effect */
+  transform: scale(1.2);
+  z-index: 1001;
+  position: relative; /* Ensure the modal is a positioned container for absolute positioning */
+  display: flex;
+  flex-direction: column;
+  height: 25em;
+  width: 30em;
+}
+.header-container img {
+  max-width: 10em;
+  height: auto;
+  margin-bottom: em;
+  flex: 1
+}
+
+
+img {
+  position: flex;
+  max-width: 10em;
+  height: auto;
+  margin-bottom: 0em;
+  flex: 1;
+
+}
+.header-container {
+  width: 30em; 
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 3em;
+  border: #fbfffb;
+  border-radius: 1em;
+  background: none;
+  max-width: 30em;
+  max-height: auto;
+}
+
+.header-image {
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover; /* Ensure the image covers the container without stretching */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.h3 {
+  font-weight: 700;
+  color: #c7c4c4;
+}
+.quiz-header h2 {
+  text-align: center;
+  margin-top: 15px;
+  width: 20em;
+}
+
+.quiz-content {
+  text-align: center;
+}
+
+.quiz-options {
+  margin-top: 20px;
+}
+
+/* ... (your existing styles) */
+.quiz-content {
+  text-align: center;
+  position: relative; /* Ensure relative positioning for absolute positioning of the button */
+}
+
+.quiz-options {
+  margin-top: 20px;
+}
+
+.quiz-options label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.quiz-options input[type="radio"] {
+  margin-right: 10px;
+}
+
+.quiz-options input[type="radio"]:checked + span {
+  font-weight: bold;
+}
+
+.quiz-content button {
+  position: flex; /* Change to relative positioning */
+  display: block;
+  margin-bottom: -7em; /* Adjust top margin as needed */
+  padding: 0.8em 1em; /* Add padding to the buttons */
+  background-color: #656565; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.quiz-content button:hover {
+  background-color: #2b652d; /* Darken the background color on hover */
+}
+
+.submit-button {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 800px) {
+  @import url('https://fonts.googleapis.com/css2?family=Flow+Block&display=swap');
+
+:root::-webkit-scrollbar{
+  display: none;
+}
+
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+  .quiz-modal-overlay{
+    max-width: 100%;
+  }
+  .quiz-modal {
+    transform: scale(1);
+    padding: 2%;
+    max-width: 90%;
+    max-height: 100%;
+    overflow-x: hidden;
+  }
+
+  .video-container {
+    padding:1%;
+    width: 100%;
+    height:55%;
+    background-color: red;
+    border-radius: 0.4em;
+    padding-top: 56.25%; /* Set aspect ratio (16:9) */
+  }
+
+  iframe {
+    width: 100%;
+    height: 55%;
+  }
+  .header-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  .header-container {
+    width: 100%;
+    margin-bottom: 2em;
+    border-radius: 1em;
+  }
+
+  .header-image {
+    border-radius: 10px;
+  }
+
+  .close-button {
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+  }
+
+  .quiz-header h2 {
+    width:80%;
+    margin-top: 10px;
+    font-size: 1em;
+    
+  }
+
+  .quiz-content {
+    text-align: center;
+  }
+
+  .quiz-options {
+    display: flex;
+    flex-direction: column; /* Display options as a column */
+    align-items: left; /* Center options horizontally */
+  }
+
+  .quiz-options label {
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: center; /* Center the text */
+  }
+
+  .quiz-options input[type="radio"] {
+    margin-right: 0; /* Remove margin between radio button and text */
+  }
+
+
+  .quiz-content button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .submit-button {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+  }
+
+  /* Additional styles to prevent horizontal scrolling */
+  body {
+    overflow-x: hidden;
+  }
+
+  .app {
+    overflow-x: hidden;
+  }
+
+  .quiz-header h2 {
+    text-align: left; /* Align the text to the left */
+    margin-top: 10px; /* Reduce top margin */
+    font-size: 1.5em; /* Decrease font size */
+    margin-left: 10%; /* Adjust the left margin */
+  }
+
+
+  .header-container {
+    min-width: 0em;
+    min-height: 0e
+  }
+}
