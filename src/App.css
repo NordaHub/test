@@ -277,7 +277,7 @@ body {
     overflow-x: auto; /* Add this line to hide overflowing content */
     overflow-y: hidden;
     opacity: 0; /* Initially set opacity to 0 */
-    animation: fadeInAnimation 1.5s ease forwards; /* Apply animation */
+    animation: fadeInAnimation 0.5s ease forwards; /* Apply animation */
     margin-bottom: 3em;
 }
 .quizlist h2 {
