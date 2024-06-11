@@ -192,7 +192,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 5")}
 >
   <img
-    src="https://i.postimg.cc/zHKFWBLf/bybit-menu.png"
+    src="https://i.postimg.cc/8FpLyG5Z/bybit-menu.png"
     alt="Bybit"
   />
 </button>
@@ -201,7 +201,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 2")}
 >
   <img
-    src="https://i.postimg.cc/tZ7r1pt1/erc20-menu.png"
+    src="https://i.postimg.cc/R6qKBTwf/erc20-menu.png"
     alt="Ethereum"
   />
 </button>
@@ -210,7 +210,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 3")}
 >
   <img
-    src="https://i.postimg.cc/Z9w7KC3t/bsc-menu.png"
+    src="https://i.postimg.cc/QFrQT1rG/bsc-menu.png"
     alt="BSC"
   />
 </button>
@@ -219,7 +219,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 4")}
 >
   <img
-    src="https://i.postimg.cc/4H9B5P0s/polygon-menu.png"
+    src="https://i.postimg.cc/8J3WPrbY/polygon-menu.png"
     alt="Polygon"
   />
 </button>
@@ -228,7 +228,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 6")}
 >
   <img
-    src="https://i.postimg.cc/9RvBrTQS/solana-menu-2.png"
+    src="https://i.postimg.cc/WqkZDbW1/solana-menu.png"
     alt="solana"
   />
 </button>
@@ -237,7 +237,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 1")}
 >
   <img
-    src="https://i.postimg.cc/j2XKPX6t/concordium-menu.png"
+    src="https://i.postimg.cc/3kCgCNKy/concordium-menu.png"
     alt="Concordium"
   />
 </button>
@@ -281,7 +281,7 @@ const App = () => {
           <div>
             {/* <div className="dividerbox"> */}
               {/* <div className="dividercontent"> */}
-                <h2 className="section-header"><img src={concordiumsvg} alt="concoarduim" width="400" height="500" /></h2>
+                <h2 className="section-header"><img src={concordiumsvg} alt="concoarduim" /></h2>
               {/* </div> */}
             {/* </div> */}
 
