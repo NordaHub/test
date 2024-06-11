@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test/static/css/main.6f49aa83.css",
-    "main.js": "/test/static/js/main.79db49f1.js",
+    "main.js": "/test/static/js/main.2baadfc4.js",
     "static/js/787.051c1900.chunk.js": "/test/static/js/787.051c1900.chunk.js",
     "static/media/Nordahub_logo.svg": "/test/static/media/Nordahub_logo.890ec3b047be51157b4e18e716fff99a.svg",
     "static/media/Nordahub_logo_white.svg": "/test/static/media/Nordahub_logo_white.8fe22a84ba88b854bbabd52cdc12e581.svg",
@@ -14,11 +14,11 @@
     "static/media/bybit-seeklogo.svg": "/test/static/media/bybit-seeklogo.e270b4a0be09eeb2d1e4eefb0f9b7e5c.svg",
     "index.html": "/test/index.html",
     "main.6f49aa83.css.map": "/test/static/css/main.6f49aa83.css.map",
-    "main.79db49f1.js.map": "/test/static/js/main.79db49f1.js.map",
+    "main.2baadfc4.js.map": "/test/static/js/main.2baadfc4.js.map",
     "787.051c1900.chunk.js.map": "/test/static/js/787.051c1900.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6f49aa83.css",
-    "static/js/main.79db49f1.js"
+    "static/js/main.2baadfc4.js"
   ]
 }
