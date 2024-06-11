@@ -667,7 +667,7 @@ iframe {
   }
 
   .menu-tab {
-    margin-right: 1em; /* Adjust margin for menu tab */
+    margin-right: 21em; /* Adjust margin for menu tab */
   }
   
   .menu {
@@ -682,7 +682,8 @@ iframe {
   }
 
   .menu-content {
-    margin-top: 2%; /* Adjust margin as needed */
+    margin-top: -2em; /* Adjust margin as needed */
+    margin-left: 3em;
   }
 
   .header-buttons {
@@ -701,42 +702,6 @@ iframe {
     margin: 10px; /* Increase margin for spacing */
   }
 
-  /* Adjust menu button */
-  .menu-button {
-    padding: 10px 20px; /* Increase padding */
-    margin: 15px; /* Increase margin */
-    
-  }
-  .menu-button::before {
-    display: none; /* Hide the pseudo-element */
-  }
-
-  .logo-image {
-      max-width: 100px; /* Adjust the maximum width for smaller screens */
-  }
-  .menu-button::after {
-    display: none; /* Hide the pseudo-element */
-  }
-
-
-  .menu-button:focus {
-    outline: none; /* Remove focus outline for accessibility */
-  }
-
-  .menu-button:hover {
-    transform: scale(1); /* Remove hover effect */
-    border: none; /* Remove border */
-    border-radius: 0; /* Remove border-radius */
-  }
-  .menu-button img {
-    width: 300%; /* Ensure the image takes up the full width of the button */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  /* Adjust margin for the images */
-  .menu-button img {
-    margin-right: 10px; /* Adjust the margin as needed */
-  }
   .footer-text {
     font-size: 10px; /* Decrease font size for smaller screens */
   }
@@ -747,30 +712,50 @@ iframe {
   }
   .footer-copyright {
     font-size: 6px; /* Decrease font size for smaller screens */
-  width: 100%; /* Ensure the text fits within the screen */
-  text-align: center; /* Center the text */
+    width: 100%; /* Ensure the text fits within the screen */
+    text-align: center; /* Center the text */
   }
-  .quizlist {
-    width: 90%; /* Adjust width to fit the screen */
-    margin: 1em auto 2%; /* Center the quiz content */
-    padding: 2%; /* Add padding */
-    border-radius: 1em; /* Add border radius for styling */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow for depth */
-  }
-  
   .quizintro {
-    display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically */
+}
+  .quizlist {
+    width: 90%; /* Adjust as needed */
+    height: 15%; /* Adjust as needed */
+    margin: 1% auto; /* Adjust as needed */
+    background-image: url('./images/menu_bar.png');
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    padding: 2%; /* Adjust as needed */
+    border-radius: 1em; /* Adjust as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
+    overflow-x: auto; /* Add this line to hide overflowing content */
+    overflow-y: hidden;
+    opacity: 0; /* Initially set opacity to 0 */
+    animation: fadeInAnimation 1.5s ease forwards; /* Apply animation */
+    margin-bottom: 3em;
+    display: grid;
+    grid-template-columns: 1fr;
+ 
+    
   }
-  
+  .quizlist h2 {
+  color: white;
+  margin-top: 0;
+  font-size: 20px;
+  }
   .text-box {
-    margin-bottom: 1em; /* Add space between text box and image */
-    padding: 1em; /* Add padding */
+    padding: 0em; /* Add padding */
     border-radius: 1em; /* Add border radius for styling */
     background-color: transparent; /* Set background color */
     color: #ffffff; /* Set text color */
-  }
+    font-size: 14px;
+    margin-bottom: -13em;
   
+  }
+  .image-container {
+    width: 100%; /* Ensure image container takes full width */
+    margin-bottom: -5em;
+  }
   .object-details p {
     margin: 0.5em 0; /* Adjust spacing between paragraphs */
   }
