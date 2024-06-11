@@ -245,7 +245,9 @@ img {
     align-items: left; /* Align options to the left */
   }
   
-
+  .clickable-button{
+    margin-left: 2.5em;
+  }
   .submit-button {
     position: relative;
     bottom: 0;
@@ -297,4 +299,22 @@ img {
     min-width: 0em;
     min-height: 0e
   }
+}
+
+@media screen and (max-width: 800px) {
+  .quiz-modal {
+    height:28em;
+    width: 30em;
+  }
+  .quiz-header h2 {
+    text-align: center;
+    margin-top: 20px;
+    width: 15em;
+    font-size: 16px;
+  }
+  img {
+    position: flex;
+
+  }
+  
 }
