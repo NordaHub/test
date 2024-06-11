@@ -289,7 +289,7 @@ const App = () => {
             <div className="Quizmenu">
               <div className="quizlist">
                 <h2>What is Concordium?</h2>                <div className='Rewardsleft'>
-                  <p>Rewards Left 500/500</p>
+                  <p>Rewards Left 500/500</p><p>Non Available for US residents</p>
                 </div>
                 <div className="quizintro">
                   <div className="text-box">
@@ -297,6 +297,9 @@ const App = () => {
                       <p>
                         Explore the innovative world of Concordium, a groundbreaking blockchain platform redefining digital trust. Discover its integration of identity verification, privacy, and regulatory compliance. Learn about its unique governance model balancing decentralization and legal adherence. Whether you're a blockchain enthusiast or curious learner, join us to uncover Concordium's transformative potential in shaping the future of blockchain technology.        Let's begin!
                       </p>
+                      <h5>Disclaimer: Rewards gets airdropped once per week due to US regulations, manual airdropping system is required. Please only complete the quiz once!
+
+                      </h5>
                     </div>
                   </div>
                   <div className="image-container">
