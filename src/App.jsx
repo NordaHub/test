@@ -192,7 +192,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 5")}
 >
   <img
-    src="https://media.discordapp.net/attachments/972039284410449920/1248705358571241492/bybit_menu.png?ex=6664a2fd&is=6663517d&hm=dc62aeb1229738cdb21d448cca93fbfc2265db82dd3d49cbdf1d55a52fd8499e&=&format=webp&quality=lossless"
+    src="https://i.postimg.cc/zHKFWBLf/bybit-menu.png"
     alt="Bybit"
   />
 </button>
@@ -201,7 +201,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 2")}
 >
   <img
-    src="https://cdn.discordapp.com/attachments/972039284410449920/1248704833804828793/erc20_menu.png?ex=6664a280&is=66635100&hm=f83f79010604e27727e61fdbbc27ebc229b18fc4607285c5df26e37f4302f215&"
+    src="https://i.postimg.cc/tZ7r1pt1/erc20-menu.png"
     alt="Ethereum"
   />
 </button>
@@ -210,7 +210,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 3")}
 >
   <img
-    src="https://cdn.discordapp.com/attachments/972039284410449920/1248704854524690595/bsc_menu.png?ex=6664a285&is=66635105&hm=2bd002e41d9cb388ddcdcfda6ce1e642b7995d0f7d9d8683e95ca8078d9e3e64&"
+    src="https://i.postimg.cc/Z9w7KC3t/bsc-menu.png"
     alt="BSC"
   />
 </button>
@@ -219,7 +219,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 4")}
 >
   <img
-    src="https://media.discordapp.net/attachments/972039284410449920/1248704874376462447/polygon_menu.png?ex=6664a289&is=66635109&hm=5f2c6bd94eb03a715bf78e7375adfabf5446afa6991b2a01c660f8feda8d4f7a&=&format=webp&quality=lossless"
+    src="https://i.postimg.cc/4H9B5P0s/polygon-menu.png"
     alt="Polygon"
   />
 </button>
@@ -228,7 +228,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 6")}
 >
   <img
-    src="https://media.discordapp.net/attachments/972039284410449920/1248705032833077248/solana_menu_2.png?ex=6664a2af&is=6663512f&hm=333c2a355638e18e3b6203e74cd921354fba2431f6f676b3e57f15cdf08f4086&=&format=webp&quality=lossless"
+    src="https://i.postimg.cc/9RvBrTQS/solana-menu-2.png"
     alt="solana"
   />
 </button>
@@ -237,7 +237,7 @@ const App = () => {
   onClick={() => handleCategorySelect("Category 1")}
 >
   <img
-    src="https://media.discordapp.net/attachments/972039284410449920/1248704890700562532/concordium_menu.png?ex=6664a28d&is=6663510d&hm=5a2c4287355dc52588e533b835297ebf07a2e86f247fdc076149f5e3b3b867b0&=&format=webp&quality=lossless"
+    src="https://i.postimg.cc/j2XKPX6t/concordium-menu.png"
     alt="Concordium"
   />
 </button>
@@ -269,7 +269,7 @@ const App = () => {
             </div>
             <div className="image-container">
               <div className="image-inner-container">
-                <img className="object-image" src="https://cdn.discordapp.com/attachments/972039284410449920/1248705982247469077/Nordahub_logo_white.png?ex=6664a392&is=66635212&hm=0d289defcab042aca8d743d81c3e70a6b0ad56d189cab17ec74cbf562d8bc1ca&" alt="Object Image" />
+                <img className="object-image" src="https://i.postimg.cc/KzxHBy03/Nordahub-logo-white.png" alt="Object Image" />
               </div>
             </div>
           </div>
@@ -304,7 +304,7 @@ const App = () => {
                   </div>
                   <div className="image-container">
                     <div className="image-inner-container">
-                      <img className="object-image" src="https://cdn.discordapp.com/attachments/972039284410449920/1248706217950580808/bc41c6caba1ab416c7f42a6f8b2b725c.png?ex=6664a3ca&is=6663524a&hm=c1fe7224382b43135a970335084941d10024b0f9a29d1fbcc6e5fd111e77148a&" alt="Object Image" />
+                      <img className="object-image" src="https://i.postimg.cc/s2F8fWSc/maxresdefault.png" alt="Object Image" />
                     </div>
                   </div>
                 </div>
