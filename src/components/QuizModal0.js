@@ -75,88 +75,102 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
     {
       type: 'video',
       title: 'Concordium?',
-      src: 'https://www.youtube.com/embed/qadvDTkuQAw',
-    },
-    {
-      type: 'question',
-      question: 'What is the unique feature of the Concordium blockchain and what does it provide?',
-      options: ['The Concordium protocol is EVM compatible and therefore compatible with all EVM-dAPPS. Fast onboarding for Ethereum developers.', ' At the protocol level, Concordium contains an identity layer that allows it to provide an additional level of trust between interacting parties.', 'The Concordium protocol is a three-part protocol that is unprecedentedly secure while being highly scalable.'],
-      correctAnswer: ' At the protocol level, Concordium contains an identity layer that allows it to provide an additional level of trust between interacting parties.',
-      infoLink: 'https://developer.concordium.software/en/mainnet/net/guides/learn-about-concordium.html#learn-about-concordium'
-    },
-    {
-      type: 'video',
-      title: 'ConcordiumBFT ',
-      src: 'https://www.youtube.com/embed/baPCYS6zKe4',
-    },
-    {
-      type: 'question',
-      question: 'How long does it take to send a transaction and what is the throughput in the context of TPS?',
-      options: [
-        'The transaction finalization time is 12-14 seconds. Throughput is 15 transactions per second',
-        'Transaction finalization time is approximately 2 seconds. Throughput can be up to 2 thousand transactions per second',
-        'Since Concordium is based on scientific research, it initially has a fairly high throughput of 70 thousand transactions per second with a transaction finalization speed of up to 0.6 seconds'
-      ],
-      correctAnswer: 'Thanks to the latest major update to ConcordiumBFT, transaction finalization time is approximately 2 seconds. Throughput can be up to 2 thousand transactions per second',
-      infoLink: 'https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt'
-    },
-    {
-      type: 'question',
-      question: 'To create an account and use dAPPs, I must go through a verification process. What happens to my personal data? Will this affect my privacy?',
-      options: ['The blockchain is a public ledger, so all my personal data is available to any network participant and any dAPPs immediately after creating an account.', 'My personal data never gets into the blockchain network and is not stored publicly, but is stored offline in encrypted form on the ID-provider side. ZKP technology is used to verify user data. I personally choose what information can be provided to the dAPPs'],
-      correctAnswer: 'Both technical and fundamental factors',
-      image: '',
-      infoLink: 'https://developer.concordium.software/en/mainnet/net/concepts/id-accounts.html'
-      
-    },
-    {
-      type: 'question',
-      question: 'What are shielded transactions in the Concordium blockchain?',
-      options: ['A special type of transaction for a delegation', 'Transaction type to deploy a smart contract', 'A transaction in which the amount that is transferred is only visible to the sender and the receiver.'],
-      correctAnswer: 'A transaction in which the amount that is transferred is only visible to the sender and the receiver.',
-      infoLink: 'https://developer.concordium.software/en/mainnet/net/guides/shield-ccd-wallets.html',
-      image: 'https://cdn.discordapp.com/attachments/972039284410449920/1249958745270779964/cartoon-style-blue-shield_78370-1110.png?ex=6669324b&is=6667e0cb&hm=6bc0f962aa9659769a12dc296c62aae4c4d21b3144caef384b3a9e3ba95fb3a6&',
-      
-    },
-    {
-      type: 'question',
-      question: 'What was the name of the native Concordium token before the rebranding?',
-      options: ['CCT - Common Concordium token', 'CBT - Concordiums base token', 'GTU - Global transaction unit', 'TBT - Total binding token'],
-      correctAnswer: 'GTU -Global transaction unit',
-      image: 'https://cdn.discordapp.com/attachments/972039284410449920/1249959508889833575/1_K1Obh-od304wFc26N9EnaQ.png?ex=66693302&is=6667e182&hm=a02844c264b968d7ed852b9371c4b8a11e0f642558edc579e30871b54a6767b2&',
-      
-    },
-    {
-      type: 'question',
-      question: 'What is the official tagline at Concordium?',
-      options: ['Building a safer tomorrow', 'Identification is the future', 'Creating an environment of trust.'],
-      correctAnswer: 'A transaction in which the amount that is transferred is only visible to the sender and the receiver.',
-      infoLink: 'https://www.concordium.com/about',
-      image: 'https://cdn.discordapp.com/attachments/972039284410449920/1249958548004143166/images.jpg?ex=6669321c&is=6667e09c&hm=c9d7c6431286dc615eb7f12943f2b80c6ee61d5c535582224e6726e006befbb8&',
-      
-    },
-    {
-      type: 'video',
-      title: 'What is Concordium? ',
       src: 'https://www.youtube.com/embed/EcV_bPQXcWc',
     },
     {
       type: 'question',
-      question: 'What is Concordium Academy',
-      options: ['This is the name of the department at the partner university in Aarhus', 'This portal allows you to learn how to develop dApps on Concordium and get NFT for its deployment on the blockchain', 'Concordium Academy is a Governance Committee that evaluates and implements parameter changes and protocol updates, and oversees and adjusts the tokenomics'],
-      correctAnswer: 'This portal allows you to learn how to develop dApps on Concordium and get NFT for its deployment on the blockchain.',
+      question: 'What are the two key differentiators of the Concordium blockchain mentioned by Holger Fischer, and why are they important for organizations?',
+      options: ['Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.', 'High transaction speed and low energy consumption; they are important for efficiency and sustainability.', 'Decentralized governance and open-source code; they are important for transparency and community involvement.'],
+      correctAnswer: ' Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability',
+    },
+    {
+      type: 'question',
+      question: 'How does Concordium aim to address the blockchain trilemma, and what additional component does it prioritize?',
+      options: [
+        'By focusing on decentralization, security, and scalability; it also prioritizes environmental sustainability.',
+        'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready.',
+        'By enhancing transaction speed, reducing costs, and improving user experience; it also prioritizes community engagement.'
+      ],
+      correctAnswer: 'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready',
+    },
+    {
+      type: 'question',
+      question: 'What is the overall mission of Concordium according to Holger Fischer, and how does the identity-layer contribute to achieving this mission?',
+      options: [
+        'To create a decentralized economy by eliminating intermediaries; the identity-layer ensures privacy.', 
+        'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
+        'To promote financial inclusion and accessibility; the identity-layer supports user-friendly interfaces.'],
+      correctAnswer: 'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
+      
+    },
+    {
+      type: 'video',
+      title: 'The vision of Concordium',
+      src: 'https://www.youtube.com/embed/A4wt7ESNHpM',
+    },
+    {
+      type: 'question',
+      question: 'What is the overall vision of Concordium according to the speaker?',
+      options: ['To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.', 'To focus solely on creating decentralized financial systems.', 'To provide a platform for speculative investments in the crypto space.'],
+      correctAnswer: 'To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.',
+      image: '',
+      
+    },
+    {
+      type: 'question',
+      question: 'According to the speaker, what were some of the issues with early generations of blockchain technology?',
+      options: [
+        'High transaction fees and lack of marketing strategies.',
+        'Lack of cryptographic solidity, tech quality, scalability, and a mature understanding of business.',
+        'Over-regulation and slow transaction speeds.'
+      ],
+      correctAnswer: 'Lack of cryptographic solidity, tech quality, scalability, and a mature understanding of business.',
+    },
+    {
+      type: 'question',
+      question: 'What does the speaker believe is necessary for blockchain projects to succeed after the current market downturn?',
+      options: ['Increased speculative investments and aggressive marketing.', ' Building real value through increased security, efficiency, transparency, and aligning with real business needs.','Focusing on decentralized applications and ignoring regulatory compliance'],
+      correctAnswer: ' Building real value through increased security, efficiency, transparency, and aligning with real business needs.',
+      
+    },
+    {
+      type: 'video',
+      title: 'AI & Blockchain - AI, Use Cases and Regulation',
+      src: 'https://www.youtube.com/embed/u3By5HlDeDU',
+    },
+    {
+      type: 'question',
+      question: 'Who is involved in creating the new AI regulations in the EU?',
+      options: ['Individual AI developers and tech companies', 'Panels of people working in Brussels', 'University researchers and independent think tanks.'],
+      correctAnswer: 'Panels of people working in Brussels',
       image: 'https://cdn.discordapp.com/attachments/972039284410449920/1249957902219743263/images.jpg?ex=66693182&is=6667e002&hm=dff2c2ff420eb2f685d691fea1b9d34c564bb7b657897592b36a5ff41d73962d&',
       
   
     },
     {
       type: 'question',
-      question: 'Concordium transaction fees are',
-      options: ['Transaction fees are free, the user does not spend any money to send the transaction.', 'Transaction costs are designed to be relatively stable in EUR terms', 'Unpredictable and depends on many factors, such as network load, number of active validators, etc.'],
-      correctAnswer: 'Transaction costs are designed to be relatively stable in EUR terms',
-      image: 'https://cdn.discordapp.com/attachments/972039284410449920/1249957740697092106/hiddenfees-900x387.webp?ex=6669315c&is=6667dfdc&hm=e5d3ce1e15ad200899bd03902a147ed28780d3f062febf04264fcf8fc668e9a7&',
+      question: 'What is one of the big problems with AI?',
+      options: ['AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.', 'AI systems are too slow for practical applications.', 'AI requires too much computational power, making it inefficient.'],
+      correctAnswer: 'AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.',
+      image: 'https://cdn.discordapp.com/attachments/972039284410449920/1249958745270779964/cartoon-style-blue-shield_78370-1110.png?ex=6669324b&is=6667e0cb&hm=6bc0f962aa9659769a12dc296c62aae4c4d21b3144caef384b3a9e3ba95fb3a6&',
       
     },
+    {
+      type: 'question',
+      question: 'What needs to be verified to ensure the reliability of AI models?',
+      options: ['The user interface, the scalability, and the accessibility of the technology.', 'The speed of the model, the cost of training, and the energy consumption.', 'The authenticity of the data going into the model, the model itself, and the authenticity of the data coming out of the model'],
+      correctAnswer: 'The authenticity of the data going into the model, the model itself, and the authenticity of the data coming out of the model',
+      image: '',
+      
+    },
+    {
+      type: 'question',
+      question: 'How is the EU addressing AI regulation?',
+      options: ['By creating guidelines for AI hardware development and deployment.', 'By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.', 'By implementing policies to increase AI adoption in small businesses and startups.'],
+      correctAnswer: 'By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.',
+      image: 'https://cdn.discordapp.com/attachments/972039284410449920/1249958548004143166/images.jpg?ex=6669321c&is=6667e09c&hm=c9d7c6431286dc615eb7f12943f2b80c6ee61d5c535582224e6726e006befbb8&',
+      
+    }, 
     {
       type: 'final step',
       question: 'SCORE',
