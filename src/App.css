@@ -327,7 +327,6 @@ body {
 }
 
 .object-image {
-  margin-top:200px;
   max-width: 80%; /* Adjusted to ensure image doesn't overflow container */
   max-height: 400px; /* Adjust the height to be 80% of the container height */
 }
@@ -527,12 +526,16 @@ iframe {
 
 .section-header {
   max-height: 100px;
-  text-align: center;
+  text-align: right;
   font-size: 3em; /* Adjust font size */
   color: #ffffff; /* Text color */
-  margin: 0; /* Remove default margin */
-  
+  display: flex; /* Set display to flex */
+  height: auto;
+  align-items: right; /* Center items vertically */
+  justify-content: right; /* Center items horizontally */
+  flex: 1;
 }
+
 
 
 .faq-modal-overlay {
@@ -749,12 +752,12 @@ iframe {
     background-color: transparent; /* Set background color */
     color: #ffffff; /* Set text color */
     font-size: 14px;
-    margin-bottom: -13em;
+  
   
   }
   .image-container {
     width: 100%; /* Ensure image container takes full width */
-    margin-bottom: -5em;
+    
   }
   .object-details p {
     margin: 0.5em 0; /* Adjust spacing between paragraphs */
