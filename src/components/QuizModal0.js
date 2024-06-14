@@ -76,14 +76,13 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
       type: 'video',
       title: 'Concordium?',
       src: 'https://www.youtube.com/embed/EcV_bPQXcWc',
-
     },
     {
       type: 'question',
       question: 'What are the two key differentiators of the Concordium blockchain mentioned by Holger Fischer, and why are they important for organizations?',
       options: ['Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.', 'High transaction speed and low energy consumption; they are important for efficiency and sustainability.', 'Decentralized governance and open-source code; they are important for transparency and community involvement.'],
       correctAnswer: ' Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability',
-      image: 'https://i.postimg.cc/3JJ7LnGv/Learn-Illustration-Private-Key.png',
+      image: 'https://i.postimg.cc/pr8Gn8r2/bitcoin-private-cryptocurrency-coin-key-600nw-1083657314.webp',
     },
     {
       type: 'question',
@@ -94,7 +93,7 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
         'By enhancing transaction speed, reducing costs, and improving user experience; it also prioritizes community engagement.'
       ],
       correctAnswer: 'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      image: 'https://i.postimg.cc/rytYb6Jv/Blockchain-Technology.jpg',
     },
     {
       type: 'question',
@@ -104,7 +103,7 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
         'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
         'To promote financial inclusion and accessibility; the identity-layer supports user-friendly interfaces.'],
       correctAnswer: 'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      image: 'https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png',
     },
     {
       type: 'video',
@@ -116,7 +115,7 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
       question: 'What is the overall vision of Concordium according to the speaker?',
       options: ['To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.', 'To focus solely on creating decentralized financial systems.', 'To provide a platform for speculative investments in the crypto space.'],
       correctAnswer: 'To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      image: 'https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png',
       
     },
     {
@@ -128,14 +127,14 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
         'Over-regulation and slow transaction speeds.'
       ],
       correctAnswer: 'Lack of cryptographic solidity, tech quality, scalability, and a mature understanding of business.',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      image: 'https://i.postimg.cc/P5K6ZdX8/Adobe-Stock-280230556-scaled.webp',
     },
     {
       type: 'question',
       question: 'What does the speaker believe is necessary for blockchain projects to succeed after the current market downturn?',
       options: ['Increased speculative investments and aggressive marketing.', ' Building real value through increased security, efficiency, transparency, and aligning with real business needs.','Focusing on decentralized applications and ignoring regulatory compliance'],
       correctAnswer: ' Building real value through increased security, efficiency, transparency, and aligning with real business needs.',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      image: 'https://i.postimg.cc/9fMLYs0g/alt-success.jpg',
     },
     {
       type: 'video',
@@ -156,7 +155,7 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
       question: 'What is one of the big problems with AI?',
       options: ['AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.', 'AI systems are too slow for practical applications.', 'AI requires too much computational power, making it inefficient.'],
       correctAnswer: 'AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      image: 'https://i.postimg.cc/G2TzZYkk/20230607-PHT95601-original.jpg',
       
     },
     {
@@ -164,7 +163,7 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
       question: 'What needs to be verified to ensure the reliability of AI models?',
       options: ['The user interface, the scalability, and the accessibility of the technology.', 'The speed of the model, the cost of training, and the energy consumption.', 'The authenticity of the data going into the model, the model itself, and the authenticity of the data coming out of the model'],
       correctAnswer: 'The authenticity of the data going into the model, the model itself, and the authenticity of the data coming out of the model',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      image: 'https://i.postimg.cc/tJhkgjvJ/images.jpg',
       
     },
     {
@@ -191,7 +190,7 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
         <button className="close-button" onClick={onClose}>X</button>
         <div className="header-containerQ">
                         <div className="image-containerQ">
-                <img src={currentStep.image} alt="QImage" className="centered-image" />
+                <img src={currentStep.image} alt="" className="centered-image" />
               </div>
           <div className="quiz-header">
             <h2>{currentStep.type === 'video' ? `Video: ${currentStep.title}` : currentStep.question}</h2>
@@ -249,13 +248,13 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
           <div className="final-screen">
             {quizCompleted && (
               <>
-                <img src="success_image_url" alt="Success" />
+                <img src="https://i.postimg.cc/5t6mCvKZ/1691959907767.png" alt="Success" />
                 <h3>Congratulations! You have successfully completed the quiz.</h3>
               </>
             )}
             {quizFailed && (
               <>
-                <img src="" alt="Retry" />
+                <img src="https://i.postimg.cc/XvmkcJTX/360-F-105916344-s7p1ua4-Ck6-GPtqv7-OAuxf-DSw-Wzcsxf-Yf.jpg" alt="Retry" />
                 <h3>Quiz Failed! Please try again.</h3>
               </>
             )}
