@@ -253,7 +253,7 @@ const App = () => {
         <div classname="cyka">
         <div className="dividerbox">
            <div className="dividercontent">
-              <h2 className="section-header">-</h2>
+              <h2 className="section-header"></h2>
            </div>
           </div>
         <div className="Quizmenu">
