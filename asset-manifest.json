@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.76581de7.css",
+    "main.css": "/static/css/main.cfdebd08.css",
     "main.js": "/static/js/main.76cbcc4a.js",
     "static/js/787.051c1900.chunk.js": "/static/js/787.051c1900.chunk.js",
+    "static/media/card_bg.png": "/static/media/card_bg.4aeb50578eeed2ded1c9.png",
     "static/media/Nordahub_logo.svg": "/static/media/Nordahub_logo.890ec3b047be51157b4e18e716fff99a.svg",
     "static/media/Nordahub_logo_white.svg": "/static/media/Nordahub_logo_white.8fe22a84ba88b854bbabd52cdc12e581.svg",
     "static/media/FNX.svg": "/static/media/FNX.7d5c7af7acf69b05fefe24013c70fc5e.svg",
@@ -13,12 +14,12 @@
     "static/media/Concordium-Logo-White.svg": "/static/media/Concordium-Logo-White.028b2c1bcf12eedaca7f2ad99d98d13c.svg",
     "static/media/bybit-seeklogo.svg": "/static/media/bybit-seeklogo.e270b4a0be09eeb2d1e4eefb0f9b7e5c.svg",
     "index.html": "/index.html",
-    "main.76581de7.css.map": "/static/css/main.76581de7.css.map",
+    "main.cfdebd08.css.map": "/static/css/main.cfdebd08.css.map",
     "main.76cbcc4a.js.map": "/static/js/main.76cbcc4a.js.map",
     "787.051c1900.chunk.js.map": "/static/js/787.051c1900.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76581de7.css",
+    "static/css/main.cfdebd08.css",
     "static/js/main.76cbcc4a.js"
   ]
 }
