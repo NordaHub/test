@@ -61,6 +61,7 @@
 
 .radio-button-container {
   margin-right: 10px; /* Adjust the spacing as needed */
+  padding-left: 10px;
 }
 
 .option-text-container {
@@ -92,7 +93,7 @@
   display: none; /* Hide line breaks for long options */
 }
 .quiz-modal {
-  background-image: url('https://i.postimg.cc/mkN3sShF/abstract-technology-background-big-data-600nw-1666595941.webp');
+  background-image: url('./images/card_bg.png');
   background-size:100%;
   padding: 5em;
   border-radius: 1em;
@@ -190,7 +191,7 @@
   display: grid;
   align-items: flex-end;
   display: table-column;
-  background:#7272729a;
+  background:#72727246;
   padding: 1%;
   border-radius: 1em; /* Adjust as needed */
   box-shadow: 0 0 10px rgb(0, 0, 0);
