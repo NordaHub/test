@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../QuizModal.css';
 
 let testAnswers = {};
+let timer = 0; // Initialize the timer
 
-const QuizModal0 = ({ onClose, onQuizComplete }) => {
+const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
   const [stepIndex, setStepIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [videoWatched, setVideoWatched] = useState(false);
@@ -11,9 +12,7 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
   const [score, setScore] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [quizFailed, setQuizFailed] = useState(false);
-  const handleSubmit = () => {
-    console.log("Quiz submitted! Score:", score);
-  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSubmitButton(true);
@@ -54,8 +53,31 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
     setScore(userScore);
     if (userScore === steps.filter(step => step.type === 'question').length) {
       setQuizCompleted(true);
+      sendWebhookMessage("Quiz Completed Successfully", walletAddress);
+      onQuizComplete && onQuizComplete(userScore);
     } else {
       setQuizFailed(true);
+      sendWebhookMessage("Quiz Failed", walletAddress);
+    }
+  };
+
+  const sendWebhookMessage = (message, walletAddress) => {
+    if (timer === 0) {
+      timer = 1;
+
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1248735229137649784/hUvQJ49mtJo6VdRiyZF2nXzF2Nlnl9M_dGMA1gEZg2Qsqj-EdYQwYnF5ZfZzxVb-etSY");
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "Quiz Notification",
+        avatar_url: "",
+        content: `${message}\nWallet Address: ${walletAddress}`
+      };
+
+      request.send(JSON.stringify(params));
+    } else {
+      setTimeout(() => { timer = 0; }, 10000); // Reset timer after 10 seconds
     }
   };
 
@@ -80,8 +102,12 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
     {
       type: 'question',
       question: 'What are the two key differentiators of the Concordium blockchain mentioned by Holger Fischer, and why are they important for organizations?',
-      options: ['Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.', 'High transaction speed and low energy consumption; they are important for efficiency and sustainability.', 'Decentralized governance and open-source code; they are important for transparency and community involvement.'],
-      correctAnswer: ' Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability',
+      options: [
+        'Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.',
+        'High transaction speed and low energy consumption; they are important for efficiency and sustainability.',
+        'Decentralized governance and open-source code; they are important for transparency and community involvement.'
+      ],
+      correctAnswer: 'Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.',
       image: 'https://i.postimg.cc/pr8Gn8r2/bitcoin-private-cryptocurrency-coin-key-600nw-1083657314.webp',
     },
     {
@@ -92,16 +118,17 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
         'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready.',
         'By enhancing transaction speed, reducing costs, and improving user experience; it also prioritizes community engagement.'
       ],
-      correctAnswer: 'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready',
+      correctAnswer: 'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready.',
       image: 'https://i.postimg.cc/rytYb6Jv/Blockchain-Technology.jpg',
     },
     {
       type: 'question',
       question: 'What is the overall mission of Concordium according to Holger Fischer, and how does the identity-layer contribute to achieving this mission?',
       options: [
-        'To create a decentralized economy by eliminating intermediaries; the identity-layer ensures privacy.', 
+        'To create a decentralized economy by eliminating intermediaries; the identity-layer ensures privacy.',
         'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
-        'To promote financial inclusion and accessibility; the identity-layer supports user-friendly interfaces.'],
+        'To promote financial inclusion and accessibility; the identity-layer supports user-friendly interfaces.'
+      ],
       correctAnswer: 'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
       image: 'https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png',
     },
@@ -113,10 +140,13 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
     {
       type: 'question',
       question: 'What is the overall vision of Concordium according to the speaker?',
-      options: ['To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.', 'To focus solely on creating decentralized financial systems.', 'To provide a platform for speculative investments in the crypto space.'],
+      options: [
+        'To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.',
+        'To focus solely on creating decentralized financial systems.',
+        'To provide a platform for speculative investments in the crypto space.'
+      ],
       correctAnswer: 'To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.',
       image: 'https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png',
-      
     },
     {
       type: 'question',
@@ -132,8 +162,12 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
     {
       type: 'question',
       question: 'What does the speaker believe is necessary for blockchain projects to succeed after the current market downturn?',
-      options: ['Increased speculative investments and aggressive marketing.', ' Building real value through increased security, efficiency, transparency, and aligning with real business needs.','Focusing on decentralized applications and ignoring regulatory compliance'],
-      correctAnswer: ' Building real value through increased security, efficiency, transparency, and aligning with real business needs.',
+      options: [
+        'Increased speculative investments and aggressive marketing.',
+        'Building real value through increased security, efficiency, transparency, and aligning with real business needs.',
+        'Focusing on decentralized applications and ignoring regulatory compliance.'
+      ],
+      correctAnswer: 'Building real value through increased security, efficiency, transparency, and aligning with real business needs.',
       image: 'https://i.postimg.cc/9fMLYs0g/alt-success.jpg',
     },
     {
@@ -144,54 +178,53 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
     {
       type: 'question',
       question: 'Who is involved in creating the new AI regulations in the EU?',
-      options: ['Individual AI developers and tech companies', 'Panels of people working in Brussels', 'University researchers and independent think tanks.'],
+      options: [
+        'Individual AI developers and tech companies',
+        'Panels of people working in Brussels',
+        'University researchers and independent think tanks.'
+      ],
       correctAnswer: 'Panels of people working in Brussels',
       image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
-      
-  
     },
     {
       type: 'question',
       question: 'What is one of the big problems with AI?',
-      options: ['AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.', 'AI systems are too slow for practical applications.', 'AI requires too much computational power, making it inefficient.'],
+      options: [
+        'AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.',
+        'AI systems are too slow for practical applications.',
+        'AI requires too much computational power, making it inefficient.'
+      ],
       correctAnswer: 'AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.',
-      image: 'https://i.postimg.cc/G2TzZYkk/20230607-PHT95601-original.jpg',
-      
+      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
     },
     {
       type: 'question',
-      question: 'What needs to be verified to ensure the reliability of AI models?',
-      options: ['The user interface, the scalability, and the accessibility of the technology.', 'The speed of the model, the cost of training, and the energy consumption.', 'The authenticity of the data going into the model, the model itself, and the authenticity of the data coming out of the model'],
-      correctAnswer: 'The authenticity of the data going into the model, the model itself, and the authenticity of the data coming out of the model',
-      image: 'https://i.postimg.cc/tJhkgjvJ/images.jpg',
-      
-    },
-    {
-      type: 'question',
-      question: 'How is the EU addressing AI regulation?',
-      options: ['By creating guidelines for AI hardware development and deployment.', 'By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.', 'By implementing policies to increase AI adoption in small businesses and startups.'],
+      question: 'How does Holger Fischer describe the EU’s approach to regulating AI?',
+      options: [
+        'By creating new tax incentives for AI research and development.',
+        'By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.',
+        'By establishing policies to increase AI adoption in small businesses and startups.'
+      ],
       correctAnswer: 'By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.',
       image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
-      
-    }, 
+    },
     {
       type: 'final step',
       question: 'SCORE',
       image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
     },
-    
   ];
 
   const currentStep = steps[stepIndex];
 
- return (
+  return (
     <div className="quiz-modal-overlay">
       <div className="quiz-modal">
         <button className="close-button" onClick={onClose}>X</button>
         <div className="header-containerQ">
-                        <div className="image-containerQ">
-                <img src={currentStep.image} alt="" className="centered-image" />
-              </div>
+          <div className="image-containerQ">
+            <img src={currentStep.image} alt="" className="centered-image" />
+          </div>
           <div className="quiz-header">
             <h2>{currentStep.type === 'video' ? `Video: ${currentStep.title}` : currentStep.question}</h2>
           </div>
@@ -210,34 +243,34 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
           )}
         </div>
         <div className="quiz-content">
-  {currentStep.type === 'question' && (
-    <div className="quiz-options">
-      {currentStep.infoLink && (
-        <p>
-          Please read
-          <a href={currentStep.infoLink} target="_blank" rel="noopener noreferrer"> This</a> before answering the question:
-        </p>
-      )}
-      {currentStep.options.map((option, index) => (
-        <label key={index} className={option.length < 20 ? 'short-option' : 'long-option'}>
-          <div className="option-container">
-            <div className="radio-button-container">
-              <input
-                type="radio"
-                value={option}
-                checked={selectedOption === option}
-                onChange={() => handleOptionChange(option, stepIndex + 1)}
-              />
+          {currentStep.type === 'question' && (
+            <div className="quiz-options">
+              {currentStep.infoLink && (
+                <p>
+                  Please read
+                  <a href={currentStep.infoLink} target="_blank" rel="noopener noreferrer"> this</a> before answering the question:
+                </p>
+              )}
+              {currentStep.options.map((option, index) => (
+                <label key={index} className={option.length < 20 ? 'short-option' : 'long-option'}>
+                  <div className="option-container">
+                    <div className="radio-button-container">
+                      <input
+                        type="radio"
+                        value={option}
+                        checked={selectedOption === option}
+                        onChange={() => handleOptionChange(option, stepIndex + 1)}
+                      />
+                    </div>
+                    <div className="option-text-container">
+                      {option}
+                    </div>
+                  </div>
+                </label>
+              ))}
             </div>
-            <div className="option-text-container">
-              {option}
-            </div>
-          </div>
-        </label>
-      ))}
-    </div>
-  )}
-          
+          )}
+
           {!quizCompleted && showSubmitButton && !quizFailed && (
             <button className="submit-button" onClick={handleNextStep}>
               Next
@@ -259,7 +292,6 @@ const QuizModal0 = ({ onClose, onQuizComplete }) => {
               </>
             )}
             <p>Your Score: {score}/{steps.filter(step => step.type === 'question').length}</p>
-            {!quizFailed && <button className="submit-button" onClick={handleSubmit}>Submit</button>}
             <button onClick={handleRetry}>Retry Quiz</button>
           </div>
         )}
