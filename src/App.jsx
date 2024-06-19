@@ -398,7 +398,7 @@ const App = () => {
                         <img
                           src={Polygonsvg}
                           alt="Poly"
-                          width="3000"
+                          width="300"
                           height="100"
                         />
                       </div>
@@ -425,7 +425,7 @@ const App = () => {
                     <img
                       src={solanasvg}
                       alt="Solana"
-                      width="3000"
+                      width="300"
                       height="100"
                     />
                   </div>
