@@ -297,7 +297,7 @@ const App = () => {
                           <img
                             className="object-image"
                             src="https://i.postimg.cc/KzxHBy03/Nordahub-logo-white.png"
-                            alt="Object Image"
+                            alt="Nordahub Logo"
                           />
                         </div>
                       </div>
@@ -355,7 +355,7 @@ const App = () => {
                               <img
                                 className="object-image"
                                 src="https://i.postimg.cc/s2F8fWSc/maxresdefault.png"
-                                alt="Object Image"
+                                alt=""
                               />
                             </div>
                           </div>
