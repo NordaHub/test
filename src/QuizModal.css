@@ -32,46 +32,19 @@
 }
 
 .long-option {
-  display: inline-block;
-}
-
-.long-option input[type="radio"] {
-  appearance: none;
-  -webkit-appearance: none;
-  /* For Safari */
-  -moz-appearance: none;
-  /* For Firefox */
-  width: 14px;
-  height: 14px;
-  border: 1px solid #ffffff;
-  /* Border color and thickness */
-  border-radius: 50%;
-  /* Makes the element round */
-  margin-right: 10px;
-  /* Adjust margin as needed */
-  background-color: transparent;
-  /* Transparent inside */
-  cursor: pointer;
-  outline: none;
-  position: relative;
+  display: block;
 }
 
 .quiz-options {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .option-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  /* Ensure the container takes full width */
   padding: 10px 10px;
   /* Add padding for spacing between options */
-  border-bottom: 3px solid #000000;
-  /* Add a bottom border for underline */
 }
 
 .option-container:last-child {
@@ -102,8 +75,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1rem;
+  width: 1rem;
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid #fff;
@@ -135,10 +108,10 @@
 
 /* Style the indicator (dot/circle) */
 .radio-button-container .radio-checkmark:after {
-  top: 0.25rem;
-  left: 0.25rem;
-  width: 1rem;
-  height: 1rem;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
   background: #fff;
 }
@@ -253,7 +226,7 @@
 
 .quiz-options label {
 
-  align-items: flex-start;
+  align-self: flex-start;
   margin-bottom: 10px;
   font-weight: 200;
   max-width: 100%;
@@ -345,10 +318,5 @@
   .quiz-header h2 {
     font-size: 16px;
   }
-
-  .option-text-container {
-    text-align: center;
-  }
-
 
 }
