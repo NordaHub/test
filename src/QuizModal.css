@@ -68,7 +68,7 @@
   justify-content: center;
   width: 100%;
   /* Ensure the container takes full width */
-  padding: 10px 0;
+  padding: 10px 10px;
   /* Add padding for spacing between options */
   border-bottom: 3px solid #000000;
   /* Add a bottom border for underline */
@@ -80,9 +80,67 @@
 }
 
 .radio-button-container {
-  margin-right: 10px;
-  /* Adjust the spacing as needed */
-  padding-left: 10px;
+  display: flex;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-button-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* On mouse-over, add a background color */
+.radio-button-container:hover input~.radio-checkmark {
+  background-color: #fff;
+}
+
+
+
+/* When the radio button is checked, apply background */
+.radio-button-container input:checked~.radio-checkmark {
+  background-color: transparent;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-button-container input:checked~.radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-button-container .radio-checkmark:after {
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #fff;
 }
 
 .option-text-container {
@@ -91,30 +149,6 @@
   /* Align text to the left */
 }
 
-.long-option input[type="radio"]:checked::before,
-.long-option input[type="radio"]:checked::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  /* Width of the "X" arms */
-  height: 2px;
-  /* Thickness of the "X" arms */
-  background: #000;
-  /* Color of the "X" */
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
-}
-
-.long-option input[type="radio"]:checked::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-  /* Rotate to create one arm of the "X" */
-}
-
-.long-option input[type="radio"]:checked::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-  /* Rotate to create the other arm of the "X" */
-}
 
 .long-option br {
   display: none;

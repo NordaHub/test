@@ -298,6 +298,7 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
                 >
                   <div className="option-container">
                     <div className="radio-button-container">
+                      <div className="option-text-container">{option}</div>
                       <input
                         type="radio"
                         value={option}
@@ -306,8 +307,8 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
                           handleOptionChange(option, stepIndex + 1)
                         }
                       />
+                      <span className="radio-checkmark"></span>
                     </div>
-                    <div className="option-text-container">{option}</div>
                   </div>
                 </label>
               ))}
