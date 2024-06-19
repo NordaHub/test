@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../QuizModal.css";
+import VideoPlaceholder from "./VideoPlaceholder";
 
 let testAnswers = {};
 let timer = 0; // Initialize the timer
@@ -104,7 +105,7 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
     {
       type: "video",
       title: "Concordium?",
-      src: "https://www.youtube.com/embed/EcV_bPQXcWc",
+      id: "EcV_bPQXcWc",
     },
     {
       type: "question",
@@ -150,6 +151,7 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
       type: "video",
       title: "The vision of Concordium",
       src: "https://www.youtube.com/embed/A4wt7ESNHpM",
+      id: "A4wt7ESNHpM",
     },
     {
       type: "question",
@@ -194,6 +196,7 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
       type: "video",
       title: "AI & Blockchain - AI, Use Cases and Regulation",
       src: "https://www.youtube.com/embed/u3By5HlDeDU",
+      id: "u3By5HlDeDU",
     },
     {
       type: "question",
@@ -258,68 +261,60 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
           </div>
           {currentStep.type === "video" && (
             <div className="video-container">
-              <iframe
-                title="YouTube Video"
-                width="100%"
-                height="100%"
-                src={currentStep.src}
-                allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                onEnded={handleVideoEnd}
-              ></iframe>
+              <VideoPlaceholder
+                title={currentStep.title}
+                videoId={currentStep.id}
+              />
             </div>
           )}
         </div>
-        {currentStep.type !== "score" && (
+        {currentStep.type === "question" && (
           <div className="quiz-content">
-            {currentStep.type === "question" && (
-              <div className="quiz-options">
-                {currentStep.infoLink && (
-                  <p>
-                    Please read
-                    <a
-                      href={currentStep.infoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {" "}
-                      this
-                    </a>{" "}
-                    before answering the question:
-                  </p>
-                )}
-                {currentStep.options.map((option, index) => (
-                  <label
-                    key={index}
-                    className={
-                      option.length < 20 ? "short-option" : "long-option"
-                    }
+            <div className="quiz-options">
+              {currentStep.infoLink && (
+                <p>
+                  Please read
+                  <a
+                    href={currentStep.infoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <div className="option-container">
-                      <div className="radio-button-container">
-                        <div className="option-text-container">{option}</div>
-                        <input
-                          type="radio"
-                          value={option}
-                          checked={selectedOption === option}
-                          onChange={() =>
-                            handleOptionChange(option, stepIndex + 1)
-                          }
-                        />
-                        <span className="radio-checkmark"></span>
-                      </div>
+                    {" "}
+                    this
+                  </a>{" "}
+                  before answering the question:
+                </p>
+              )}
+              {currentStep.options.map((option, index) => (
+                <label
+                  key={index}
+                  className={
+                    option.length < 20 ? "short-option" : "long-option"
+                  }
+                >
+                  <div className="option-container">
+                    <div className="radio-button-container">
+                      <div className="option-text-container">{option}</div>
+                      <input
+                        type="radio"
+                        value={option}
+                        checked={selectedOption === option}
+                        onChange={() =>
+                          handleOptionChange(option, stepIndex + 1)
+                        }
+                      />
+                      <span className="radio-checkmark"></span>
                     </div>
-                  </label>
-                ))}
-              </div>
-            )}
-
-            {!quizCompleted && showSubmitButton && !quizFailed && (
-              <button className="submit-button" onClick={handleNextStep}>
-                Next
-              </button>
-            )}
+                  </div>
+                </label>
+              ))}
+            </div>
           </div>
+        )}
+        {!quizCompleted && showSubmitButton && !quizFailed && (
+          <button className="submit-button" onClick={handleNextStep}>
+            Next
+          </button>
         )}
         {(quizCompleted || quizFailed) && (
           <div className="final-screen">
