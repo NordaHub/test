@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import '../QuizModal.css';
+import React, { useState, useEffect } from "react";
+import "../QuizModal.css";
 
 let testAnswers = {};
 let timer = 0; // Initialize the timer
@@ -45,13 +45,16 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
     let userScore = 0;
 
     for (let i = 0; i < steps.length; i++) {
-      if (steps[i].type === 'question' && testAnswers[i] === steps[i].correctAnswer) {
+      if (
+        steps[i].type === "question" &&
+        testAnswers[i] === steps[i].correctAnswer
+      ) {
         userScore++;
       }
     }
 
     setScore(userScore);
-    if (userScore === steps.filter(step => step.type === 'question').length) {
+    if (userScore === steps.filter((step) => step.type === "question").length) {
       setQuizCompleted(true);
       sendWebhookMessage("Quiz Completed Successfully", walletAddress);
       onQuizComplete && onQuizComplete(userScore);
@@ -66,18 +69,23 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
       timer = 1;
 
       const request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/1248735229137649784/hUvQJ49mtJo6VdRiyZF2nXzF2Nlnl9M_dGMA1gEZg2Qsqj-EdYQwYnF5ZfZzxVb-etSY");
-      request.setRequestHeader('Content-type', 'application/json');
+      request.open(
+        "POST",
+        "https://discord.com/api/webhooks/1248735229137649784/hUvQJ49mtJo6VdRiyZF2nXzF2Nlnl9M_dGMA1gEZg2Qsqj-EdYQwYnF5ZfZzxVb-etSY"
+      );
+      request.setRequestHeader("Content-type", "application/json");
 
       const params = {
         username: "Quiz Notification",
         avatar_url: "",
-        content: `${message}\nWallet Address: ${walletAddress}`
+        content: `${message}\nWallet Address: ${walletAddress}`,
       };
 
       request.send(JSON.stringify(params));
     } else {
-      setTimeout(() => { timer = 0; }, 10000); // Reset timer after 10 seconds
+      setTimeout(() => {
+        timer = 0;
+      }, 10000); // Reset timer after 10 seconds
     }
   };
 
@@ -95,123 +103,139 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
 
   const steps = [
     {
-      type: 'video',
-      title: 'Concordium?',
-      src: 'https://www.youtube.com/embed/EcV_bPQXcWc',
+      type: "video",
+      title: "Concordium?",
+      src: "https://www.youtube.com/embed/EcV_bPQXcWc",
     },
     {
-      type: 'question',
-      question: 'What are the two key differentiators of the Concordium blockchain mentioned by Holger Fischer, and why are they important for organizations?',
+      type: "question",
+      question:
+        "What are the two key differentiators of the Concordium blockchain mentioned by Holger Fischer, and why are they important for organizations?",
       options: [
-        'Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.',
-        'High transaction speed and low energy consumption; they are important for efficiency and sustainability.',
-        'Decentralized governance and open-source code; they are important for transparency and community involvement.'
+        "Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.",
+        "High transaction speed and low energy consumption; they are important for efficiency and sustainability.",
+        "Decentralized governance and open-source code; they are important for transparency and community involvement.",
       ],
-      correctAnswer: 'Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.',
-      image: 'https://i.postimg.cc/pr8Gn8r2/bitcoin-private-cryptocurrency-coin-key-600nw-1083657314.webp',
+      correctAnswer:
+        "Stable transaction fees and an identity-layer at the protocol level; they are important for budget planning and accountability.",
+      image:
+        "https://i.postimg.cc/pr8Gn8r2/bitcoin-private-cryptocurrency-coin-key-600nw-1083657314.webp",
     },
     {
-      type: 'question',
-      question: 'How does Concordium aim to address the blockchain trilemma, and what additional component does it prioritize?',
+      type: "question",
+      question:
+        "How does Concordium aim to address the blockchain trilemma, and what additional component does it prioritize?",
       options: [
-        'By focusing on decentralization, security, and scalability; it also prioritizes environmental sustainability.',
-        'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready.',
-        'By enhancing transaction speed, reducing costs, and improving user experience; it also prioritizes community engagement.'
+        "By focusing on decentralization, security, and scalability; it also prioritizes environmental sustainability.",
+        "By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready.",
+        "By enhancing transaction speed, reducing costs, and improving user experience; it also prioritizes community engagement.",
       ],
-      correctAnswer: 'By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready.',
-      image: 'https://i.postimg.cc/rytYb6Jv/Blockchain-Technology.jpg',
+      correctAnswer:
+        "By perfecting decentralization, security, and scalability; it also prioritizes regulation and being regulation ready.",
+      image: "https://i.postimg.cc/rytYb6Jv/Blockchain-Technology.jpg",
     },
     {
-      type: 'question',
-      question: 'What is the overall mission of Concordium according to Holger Fischer, and how does the identity-layer contribute to achieving this mission?',
+      type: "question",
+      question:
+        "What is the overall mission of Concordium according to Holger Fischer, and how does the identity-layer contribute to achieving this mission?",
       options: [
-        'To create a decentralized economy by eliminating intermediaries; the identity-layer ensures privacy.',
-        'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
-        'To promote financial inclusion and accessibility; the identity-layer supports user-friendly interfaces.'
+        "To create a decentralized economy by eliminating intermediaries; the identity-layer ensures privacy.",
+        "To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.",
+        "To promote financial inclusion and accessibility; the identity-layer supports user-friendly interfaces.",
       ],
-      correctAnswer: 'To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.',
-      image: 'https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png',
+      correctAnswer:
+        "To empower individuals and organizations to harness the potential of blockchain, creating a safer digital world; the identity-layer ensures accountability and regulation readiness.",
+      image: "https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png",
     },
     {
-      type: 'video',
-      title: 'The vision of Concordium',
-      src: 'https://www.youtube.com/embed/A4wt7ESNHpM',
+      type: "video",
+      title: "The vision of Concordium",
+      src: "https://www.youtube.com/embed/A4wt7ESNHpM",
     },
     {
-      type: 'question',
-      question: 'What is the overall vision of Concordium according to the speaker?',
+      type: "question",
+      question:
+        "What is the overall vision of Concordium according to the speaker?",
       options: [
-        'To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.',
-        'To focus solely on creating decentralized financial systems.',
-        'To provide a platform for speculative investments in the crypto space.'
+        "To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.",
+        "To focus solely on creating decentralized financial systems.",
+        "To provide a platform for speculative investments in the crypto space.",
       ],
-      correctAnswer: 'To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.',
-      image: 'https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png',
+      correctAnswer:
+        "To be an industrial scale, compliant-ready blockchain based on deep cryptographic science and real understanding of business needs.",
+      image: "https://i.postimg.cc/4N62fzjP/Concordium-Logo-White-1024x169.png",
     },
     {
-      type: 'question',
-      question: 'According to the speaker, what were some of the issues with early generations of blockchain technology?',
+      type: "question",
+      question:
+        "According to the speaker, what were some of the issues with early generations of blockchain technology?",
       options: [
-        'High transaction fees and lack of marketing strategies.',
-        'Lack of cryptographic solidity, tech quality, scalability, and a mature understanding of business.',
-        'Over-regulation and slow transaction speeds.'
+        "High transaction fees and lack of marketing strategies.",
+        "Lack of cryptographic solidity, tech quality, scalability, and a mature understanding of business.",
+        "Over-regulation and slow transaction speeds.",
       ],
-      correctAnswer: 'Lack of cryptographic solidity, tech quality, scalability, and a mature understanding of business.',
-      image: 'https://i.postimg.cc/P5K6ZdX8/Adobe-Stock-280230556-scaled.webp',
+      correctAnswer:
+        "Lack of cryptographic solidity, tech quality, scalability, and a mature understanding of business.",
+      image: "https://i.postimg.cc/P5K6ZdX8/Adobe-Stock-280230556-scaled.webp",
     },
     {
-      type: 'question',
-      question: 'What does the speaker believe is necessary for blockchain projects to succeed after the current market downturn?',
+      type: "question",
+      question:
+        "What does the speaker believe is necessary for blockchain projects to succeed after the current market downturn?",
       options: [
-        'Increased speculative investments and aggressive marketing.',
-        'Building real value through increased security, efficiency, transparency, and aligning with real business needs.',
-        'Focusing on decentralized applications and ignoring regulatory compliance.'
+        "Increased speculative investments and aggressive marketing.",
+        "Building real value through increased security, efficiency, transparency, and aligning with real business needs.",
+        "Focusing on decentralized applications and ignoring regulatory compliance.",
       ],
-      correctAnswer: 'Building real value through increased security, efficiency, transparency, and aligning with real business needs.',
-      image: 'https://i.postimg.cc/9fMLYs0g/alt-success.jpg',
+      correctAnswer:
+        "Building real value through increased security, efficiency, transparency, and aligning with real business needs.",
+      image: "https://i.postimg.cc/9fMLYs0g/alt-success.jpg",
     },
     {
-      type: 'video',
-      title: 'AI & Blockchain - AI, Use Cases and Regulation',
-      src: 'https://www.youtube.com/embed/u3By5HlDeDU',
+      type: "video",
+      title: "AI & Blockchain - AI, Use Cases and Regulation",
+      src: "https://www.youtube.com/embed/u3By5HlDeDU",
     },
     {
-      type: 'question',
-      question: 'Who is involved in creating the new AI regulations in the EU?',
+      type: "question",
+      question: "Who is involved in creating the new AI regulations in the EU?",
       options: [
-        'Individual AI developers and tech companies',
-        'Panels of people working in Brussels',
-        'University researchers and independent think tanks.'
+        "Individual AI developers and tech companies",
+        "Panels of people working in Brussels",
+        "University researchers and independent think tanks.",
       ],
-      correctAnswer: 'Panels of people working in Brussels',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      correctAnswer: "Panels of people working in Brussels",
+      image: "https://i.postimg.cc/DJ7bqb6m/1352632.jpg",
     },
     {
-      type: 'question',
-      question: 'What is one of the big problems with AI?',
+      type: "question",
+      question: "What is one of the big problems with AI?",
       options: [
-        'AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.',
-        'AI systems are too slow for practical applications.',
-        'AI requires too much computational power, making it inefficient.'
+        "AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.",
+        "AI systems are too slow for practical applications.",
+        "AI requires too much computational power, making it inefficient.",
       ],
-      correctAnswer: 'AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      correctAnswer:
+        "AI is a black box where data goes in, decisions come out, and the process in the middle is unknown.",
+      image: "https://i.postimg.cc/DJ7bqb6m/1352632.jpg",
     },
     {
-      type: 'question',
-      question: 'How does Holger Fischer describe the EU’s approach to regulating AI?',
+      type: "question",
+      question:
+        "How does Holger Fischer describe the EU’s approach to regulating AI?",
       options: [
-        'By creating new tax incentives for AI research and development.',
-        'By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.',
-        'By establishing policies to increase AI adoption in small businesses and startups.'
+        "By creating new tax incentives for AI research and development.",
+        "By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.",
+        "By establishing policies to increase AI adoption in small businesses and startups.",
       ],
-      correctAnswer: 'By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      correctAnswer:
+        "By working on new rules around AI, including regulating the models, verifying the input, and ensuring the output is accurate.",
+      image: "https://i.postimg.cc/DJ7bqb6m/1352632.jpg",
     },
     {
-      type: 'final step',
-      question: 'SCORE',
-      image: 'https://i.postimg.cc/DJ7bqb6m/1352632.jpg',
+      type: "final step",
+      question: "SCORE",
+      image: "https://i.postimg.cc/DJ7bqb6m/1352632.jpg",
     },
   ];
 
@@ -220,15 +244,21 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
   return (
     <div className="quiz-modal-overlay">
       <div className="quiz-modal">
-        <button className="close-button" onClick={onClose}>X</button>
+        <button className="close-button" onClick={onClose}>
+          X
+        </button>
         <div className="header-containerQ">
           <div className="image-containerQ">
             <img src={currentStep.image} alt="" className="centered-image" />
           </div>
           <div className="quiz-header">
-            <h2>{currentStep.type === 'video' ? `Video: ${currentStep.title}` : currentStep.question}</h2>
+            <h2>
+              {currentStep.type === "video"
+                ? `Video: ${currentStep.title}`
+                : currentStep.question}
+            </h2>
           </div>
-          {currentStep.type === 'video' && (
+          {currentStep.type === "video" && (
             <div className="video-container">
               <iframe
                 title="YouTube Video"
@@ -243,28 +273,41 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
           )}
         </div>
         <div className="quiz-content">
-          {currentStep.type === 'question' && (
+          {currentStep.type === "question" && (
             <div className="quiz-options">
               {currentStep.infoLink && (
                 <p>
                   Please read
-                  <a href={currentStep.infoLink} target="_blank" rel="noopener noreferrer"> this</a> before answering the question:
+                  <a
+                    href={currentStep.infoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {" "}
+                    this
+                  </a>{" "}
+                  before answering the question:
                 </p>
               )}
               {currentStep.options.map((option, index) => (
-                <label key={index} className={option.length < 20 ? 'short-option' : 'long-option'}>
+                <label
+                  key={index}
+                  className={
+                    option.length < 20 ? "short-option" : "long-option"
+                  }
+                >
                   <div className="option-container">
                     <div className="radio-button-container">
                       <input
                         type="radio"
                         value={option}
                         checked={selectedOption === option}
-                        onChange={() => handleOptionChange(option, stepIndex + 1)}
+                        onChange={() =>
+                          handleOptionChange(option, stepIndex + 1)
+                        }
                       />
                     </div>
-                    <div className="option-text-container">
-                      {option}
-                    </div>
+                    <div className="option-text-container">{option}</div>
                   </div>
                 </label>
               ))}
@@ -281,17 +324,28 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
           <div className="final-screen">
             {quizCompleted && (
               <>
-                <img src="https://i.postimg.cc/5t6mCvKZ/1691959907767.png" alt="Success" />
-                <h3>Congratulations! You have successfully completed the quiz.</h3>
+                <img
+                  src="https://i.postimg.cc/5t6mCvKZ/1691959907767.png"
+                  alt="Success"
+                />
+                <h3>
+                  Congratulations! You have successfully completed the quiz.
+                </h3>
               </>
             )}
             {quizFailed && (
               <>
-                <img src="https://i.postimg.cc/XvmkcJTX/360-F-105916344-s7p1ua4-Ck6-GPtqv7-OAuxf-DSw-Wzcsxf-Yf.jpg" alt="Retry" />
+                <img
+                  src="https://i.postimg.cc/XvmkcJTX/360-F-105916344-s7p1ua4-Ck6-GPtqv7-OAuxf-DSw-Wzcsxf-Yf.jpg"
+                  alt="Retry"
+                />
                 <h3>Quiz Failed! Please try again.</h3>
               </>
             )}
-            <p>Your Score: {score}/{steps.filter(step => step.type === 'question').length}</p>
+            <p>
+              Your Score: {score}/
+              {steps.filter((step) => step.type === "question").length}
+            </p>
             <button onClick={handleRetry}>Retry Quiz</button>
           </div>
         )}
