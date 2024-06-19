@@ -27,12 +27,11 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
   };
 
   const handleNextStep = () => {
-    if (stepIndex === steps.length - 1) {
+    if (stepIndex === steps.length - 1 - 1) {
       calculateScore();
-      return;
     }
     setSelectedOption(null); // reset selected option
-    setStepIndex((prevIndex) => prevIndex + 1);
+    setStepIndex((idx) => idx + 1);
     setShowSubmitButton(false); // reset the submit button
   };
 
@@ -233,8 +232,7 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
       image: "https://i.postimg.cc/DJ7bqb6m/1352632.jpg",
     },
     {
-      type: "final step",
-      question: "SCORE",
+      type: "score",
       image: "https://i.postimg.cc/DJ7bqb6m/1352632.jpg",
     },
   ];
@@ -272,55 +270,57 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
             </div>
           )}
         </div>
-        <div className="quiz-content">
-          {currentStep.type === "question" && (
-            <div className="quiz-options">
-              {currentStep.infoLink && (
-                <p>
-                  Please read
-                  <a
-                    href={currentStep.infoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+        {currentStep.type !== "score" && (
+          <div className="quiz-content">
+            {currentStep.type === "question" && (
+              <div className="quiz-options">
+                {currentStep.infoLink && (
+                  <p>
+                    Please read
+                    <a
+                      href={currentStep.infoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {" "}
+                      this
+                    </a>{" "}
+                    before answering the question:
+                  </p>
+                )}
+                {currentStep.options.map((option, index) => (
+                  <label
+                    key={index}
+                    className={
+                      option.length < 20 ? "short-option" : "long-option"
+                    }
                   >
-                    {" "}
-                    this
-                  </a>{" "}
-                  before answering the question:
-                </p>
-              )}
-              {currentStep.options.map((option, index) => (
-                <label
-                  key={index}
-                  className={
-                    option.length < 20 ? "short-option" : "long-option"
-                  }
-                >
-                  <div className="option-container">
-                    <div className="radio-button-container">
-                      <div className="option-text-container">{option}</div>
-                      <input
-                        type="radio"
-                        value={option}
-                        checked={selectedOption === option}
-                        onChange={() =>
-                          handleOptionChange(option, stepIndex + 1)
-                        }
-                      />
-                      <span className="radio-checkmark"></span>
+                    <div className="option-container">
+                      <div className="radio-button-container">
+                        <div className="option-text-container">{option}</div>
+                        <input
+                          type="radio"
+                          value={option}
+                          checked={selectedOption === option}
+                          onChange={() =>
+                            handleOptionChange(option, stepIndex + 1)
+                          }
+                        />
+                        <span className="radio-checkmark"></span>
+                      </div>
                     </div>
-                  </div>
-                </label>
-              ))}
-            </div>
-          )}
+                  </label>
+                ))}
+              </div>
+            )}
 
-          {!quizCompleted && showSubmitButton && !quizFailed && (
-            <button className="submit-button" onClick={handleNextStep}>
-              Next
-            </button>
-          )}
-        </div>
+            {!quizCompleted && showSubmitButton && !quizFailed && (
+              <button className="submit-button" onClick={handleNextStep}>
+                Next
+              </button>
+            )}
+          </div>
+        )}
         {(quizCompleted || quizFailed) && (
           <div className="final-screen">
             {quizCompleted && (
@@ -336,10 +336,6 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
             )}
             {quizFailed && (
               <>
-                <img
-                  src="https://i.postimg.cc/XvmkcJTX/360-F-105916344-s7p1ua4-Ck6-GPtqv7-OAuxf-DSw-Wzcsxf-Yf.jpg"
-                  alt="Retry"
-                />
                 <h3>Quiz Failed! Please try again.</h3>
               </>
             )}
@@ -347,7 +343,9 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
               Your Score: {score}/
               {steps.filter((step) => step.type === "question").length}
             </p>
-            <button onClick={handleRetry}>Retry Quiz</button>
+            <button className="submit-button" onClick={handleRetry}>
+              Retry Quiz
+            </button>
           </div>
         )}
       </div>

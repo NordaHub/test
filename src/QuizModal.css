@@ -153,6 +153,7 @@
 
 
 .final-screen {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -250,35 +251,26 @@
 
 }
 
-.quiz-content button {
-  position: flex;
-  /* Change to relative positioning */
-  display: block;
-  padding: 0.8em 1em;
-  /* Add padding to the buttons */
-  background-color: #0056b3;
-  color: white;
-  /* Button text color */
-  border: 0.1em solid #0056b3;
-  border-radius: 5px;
-  /* Add border radius for rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  /* Smooth transition for background color */
-}
-
-.quiz-content button:hover {
-  animation: glow 1s infinite alternate;
-  /* Apply the glow animation */
-}
-
 .submit-button {
   position: absolute;
+  display: block;
+  padding: 0.8em 1em;
+  background-color: #0056b3;
+  color: white;
+  border: 0.1em solid #0056b3;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   bottom: 20px;
-  /* Adjust as needed */
   left: 50%;
   transform: translateX(-50%);
 }
+
+.submit-button:hover {
+  /* Apply the glow animation */
+  animation: glow 1s infinite alternate;
+}
+
 
 @media screen and (max-width: 800px) {
   @import url('https://fonts.googleapis.com/css2?family=Flow+Block&display=swap');
