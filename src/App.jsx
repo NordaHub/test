@@ -271,35 +271,39 @@ const App = () => {
                   <h2 className="section-header"></h2>
                 </div>
               </div>
-              <div className="Quizmenu">
-                <div className="quizlist">
-                  <h2>Welcome To NordaHub L2E </h2>{" "}
-                  <hr className="section-divider" />
-                  <div className="quizintro">
-                    <div className="text-box">
-                      <div className="object-details">
-                        <p>
-                          Our platform also features a robust quiz and task
-                          system to reinforce learning and track your progress.
-                          Challenge yourself with interactive quizzes and
-                          complete tasks to earn rewards and certificates. This
-                          system ensures you understand the material thoroughly
-                          and stay motivated throughout your learning journey
-                        </p>
+
+              {selectedContent != "Category 1" && (
+                <div className="Quizmenu">
+                  <div className="quizlist">
+                    <h2>Welcome To NordaHub L2E </h2>{" "}
+                    <hr className="section-divider" />
+                    <div className="quizintro">
+                      <div className="text-box">
+                        <div className="object-details">
+                          <p>
+                            Our platform also features a robust quiz and task
+                            system to reinforce learning and track your
+                            progress. Challenge yourself with interactive
+                            quizzes and complete tasks to earn rewards and
+                            certificates. This system ensures you understand the
+                            material thoroughly and stay motivated throughout
+                            your learning journey
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="image-container">
-                      <div className="image-inner-container">
-                        <img
-                          className="object-image"
-                          src="https://i.postimg.cc/KzxHBy03/Nordahub-logo-white.png"
-                          alt="Object Image"
-                        />
+                      <div className="image-container">
+                        <div className="image-inner-container">
+                          <img
+                            className="object-image"
+                            src="https://i.postimg.cc/KzxHBy03/Nordahub-logo-white.png"
+                            alt="Object Image"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               <div className="body-content">
                 {/* Render different content based on selectedContent */}
