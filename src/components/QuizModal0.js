@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../QuizModal.css";
 import VideoPlaceholder from "./VideoPlaceholder";
+import CrossIcon24 from "./CrossIcon";
 
 let testAnswers = {};
 let timer = 0; // Initialize the timer
@@ -246,7 +247,7 @@ const QuizModal0 = ({ onClose, onQuizComplete, walletAddress }) => {
     <div className="quiz-modal-overlay">
       <div className="quiz-modal">
         <button className="close-button" onClick={onClose}>
-          X
+          <CrossIcon24 />
         </button>
         <div className="header-containerQ">
           <div className="image-containerQ">
