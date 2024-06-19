@@ -272,7 +272,7 @@ const App = () => {
                 </div>
               </div>
 
-              {selectedContent != "Category 1" && (
+              {selectedContent !== "Category 1" && (
                 <div className="Quizmenu">
                   <div className="quizlist">
                     <h2>Welcome To NordaHub L2E </h2>{" "}
