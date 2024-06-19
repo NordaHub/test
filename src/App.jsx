@@ -51,6 +51,7 @@ const App = () => {
 
   const handleCategorySelect = (content) => {
     setSelectedContent(content);
+    setMenuOpen(false);
   };
 
   const openQuizModalsolar = () => {
