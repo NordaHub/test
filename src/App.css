@@ -258,10 +258,12 @@ body {
 
 .banner {
   margin-top: auto;
-  background-color: #555;
   width: 100%;
   height: 3em;
-  margin-bottom:  3em;
+  margin-bottom:  6em;
+}
+.banner img{
+max-height: 99PX;  
 }
 
 .quizlist {
@@ -409,7 +411,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 3em;
-  z-index: 100000;
+  z-index: 100;
 }
 
 .footer-content {
@@ -654,6 +656,10 @@ iframe {
     align-items: center; /* Align to the bottom */
     
   }
+  .banner img{
+    max-height: 100px;
+    margin:auto;  
+  }
 
   .logotop img {
     max-width: 200%; /* Adjust the width of the logo as needed */
@@ -714,8 +720,8 @@ iframe {
     padding: 10px; /* Adjust padding for smaller screens */
   }
   .footer-copyright {
-    font-size: 6px; /* Decrease font size for smaller screens */
-    width: 100%; /* Ensure the text fits within the screen */
+    font-size: 10px; /* Decrease font size for smaller screens */
+    width: 1000%; /* Ensure the text fits within the screen */
     text-align: center; /* Center the text */
   }
   .quizintro {
@@ -800,9 +806,10 @@ iframe {
     position: fixed; /* Ensure it stays at the bottom */
     bottom: 0; /* Align it with the bottom of the screen */
     margin-top: -3em; /* Adjust margin-top to move it higher from the bottom */
-    background-color: #555;
     width: 100%;
     height: 3em;
+    display: flex;
+    justify-content: center;
   }
 
 }
@@ -856,3 +863,4 @@ iframe {
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
+
