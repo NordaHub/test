@@ -264,7 +264,7 @@ const App = () => {
           <div className="banner">
            <a href="https://t.me/TrustCallers2023" target="_blank" rel="noopener noreferrer">
             <img
-            src="https://cdn.discordapp.com/attachments/972039284410449920/1254082807702093895/photo_2024-06-22_16-13-47.jpg?ex=66783321&is=6676e1a1&hm=71484138919d33cf9309764c11ce83b8fce787d9d21358a601aa1360d9acfd99&"
+            src="https://i.postimg.cc/Hxs56MHt/photo-2024-06-22-16-13-47.jpg"
             alt="Advertisement Banner"
           />
         </a>
